@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop - Amazing Aura Perfumes</title>
+    <meta name="description" content="Browse our complete collection of luxury fragrances. Find your perfect scent from our premium perfume selection.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/shop.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <a href="index.html" class="brand-logo">
+                    <i class="fas fa-gem"></i>
+                    <span>AMAZING AURA</span>
+                </a>
+            </div>
+            
+            <div class="nav-menu" id="navMenu">
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="shop.html" class="nav-link active">Collections <i class="fas fa-chevron-down"></i></a>
+                        <div class="dropdown-menu">
+                            <a href="shop.html?filter=signature" class="dropdown-item">Signature Series</a>
+                            <a href="shop.html?filter=limited" class="dropdown-item">Limited Edition</a>
+                            <a href="shop.html?filter=classic" class="dropdown-item">Classic Collection</a>
+                            <a href="shop.html?filter=seasonal" class="dropdown-item">Seasonal Scents</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a href="about.html" class="nav-link">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="contact.html" class="nav-link">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="nav-actions">
+                <button class="search-btn" id="searchBtn">
+                    <i class="fas fa-search"></i>
+                </button>
+                <button class="cart-btn" id="cartBtn">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span class="cart-count">0</span>
+                </button>
+                <button class="menu-toggle" id="menuToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Shop Header -->
+    <section class="shop-header">
+        <div class="shop-hero">
+            <div class="shop-hero-background">
+                <img src="https://images.unsplash.com/photo-1563170351-be82bc888aa4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2000&q=80" alt="Perfume Collection">
+                <div class="shop-hero-overlay"></div>
+            </div>
+            <div class="container">
+                <div class="shop-hero-content">
+                    <h1 class="shop-title">Luxury Fragrance Collection</h1>
+                    <p class="shop-subtitle">Discover your signature scent from our curated selection of premium perfumes</p>
+                    <div class="shop-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">50+</span>
+                            <span class="stat-label">Unique Fragrances</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">100%</span>
+                            <span class="stat-label">Premium Quality</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">24/7</span>
+                            <span class="stat-label">Customer Support</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Shop Content -->
+    <section class="shop-content">
+        <div class="container">
+            <div class="shop-layout">
+                <!-- Filters Sidebar -->
+                <aside class="shop-sidebar">
+                    <div class="filter-section">
+                        <h3 class="filter-title">Categories</h3>
+                        <div class="filter-group">
+                            <label class="filter-option">
+                                <input type="checkbox" name="category" value="all" checked>
+                                <span class="checkmark"></span>
+                                All Fragrances
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" name="category" value="signature">
+                                <span class="checkmark"></span>
+                                Signature Series
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" name="category" value="limited">
+                                <span class="checkmark"></span>
+                                Limited Edition
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" name="category" value="classic">
+                                <span class="checkmark"></span>
+                                Classic Collection
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="filter-section">
+                        <h3 class="filter-title">Price Range</h3>
+                        <div class="price-range">
+                            <input type="range" id="priceRange" min="50" max="300" value="300" class="price-slider">
+                            <div class="price-display">
+                                <span>$50</span>
+                                <span id="maxPrice">$300</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="filter-section">
+                        <h3 class="filter-title">Fragrance Notes</h3>
+                        <div class="filter-group">
+                            <label class="filter-option">
+                                <input type="checkbox" name="notes" value="floral">
+                                <span class="checkmark"></span>
+                                Floral
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" name="notes" value="woody">
+                                <span class="checkmark"></span>
+                                Woody
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" name="notes" value="fresh">
+                                <span class="checkmark"></span>
+                                Fresh
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" name="notes" value="oriental">
+                                <span class="checkmark"></span>
+                                Oriental
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="filter-section">
+                        <h3 class="filter-title">Gender</h3>
+                        <div class="filter-group">
+                            <label class="filter-option">
+                                <input type="radio" name="gender" value="all" checked>
+                                <span class="radiomark"></span>
+                                All
+                            </label>
+                            <label class="filter-option">
+                                <input type="radio" name="gender" value="women">
+                                <span class="radiomark"></span>
+                                Women
+                            </label>
+                            <label class="filter-option">
+                                <input type="radio" name="gender" value="men">
+                                <span class="radiomark"></span>
+                                Men
+                            </label>
+                            <label class="filter-option">
+                                <input type="radio" name="gender" value="unisex">
+                                <span class="radiomark"></span>
+                                Unisex
+                            </label>
+                        </div>
+                    </div>
+
+                    <button class="btn btn-outline clear-filters">Clear All Filters</button>
+                </aside>
+
+                <!-- Products Grid -->
+                <main class="shop-main">
+                    <div class="shop-toolbar">
+                        <div class="shop-results">
+                            <span id="resultsCount">24</span> products found
+                        </div>
+                        <div class="shop-controls">
+                            <div class="view-toggle">
+                                <button class="view-btn active" data-view="grid">
+                                    <i class="fas fa-th"></i>
+                                </button>
+                                <button class="view-btn" data-view="list">
+                                    <i class="fas fa-list"></i>
+                                </button>
+                            </div>
+                            <select class="sort-select" id="sortSelect">
+                                <option value="featured">Featured</option>
+                                <option value="price-low">Price: Low to High</option>
+                                <option value="price-high">Price: High to Low</option>
+                                <option value="name">Name: A to Z</option>
+                                <option value="newest">Newest First</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="products-grid" id="productsGrid">
+                        <!-- Product cards will be dynamically generated -->
+                    </div>
+
+                    <div class="pagination">
+                        <button class="pagination-btn prev" disabled>
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                        <div class="pagination-numbers">
+                            <button class="pagination-number active">1</button>
+                            <button class="pagination-number">2</button>
+                            <button class="pagination-number">3</button>
+                            <span class="pagination-dots">...</span>
+                            <button class="pagination-number">8</button>
+                        </div>
+                        <button class="pagination-btn next">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                    </div>
+                </main>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="newsletter">
+        <div class="newsletter-background">
+            <img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80" alt="Newsletter Background">
+            <div class="newsletter-overlay"></div>
+        </div>
+        
+        <div class="container">
+            <div class="newsletter-content">
+                <div class="newsletter-text">
+                    <h2 class="newsletter-title">Stay Updated</h2>
+                    <p class="newsletter-subtitle">
+                        Get notified about new arrivals and exclusive offers
+                    </p>
+                </div>
+                
+                <form class="newsletter-form" id="newsletterForm">
+                    <div class="form-group">
+                        <input type="email" placeholder="Enter your email address" class="newsletter-input" required>
+                        <button type="submit" class="newsletter-btn">
+                            <span>Subscribe</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section brand-section">
+                    <div class="footer-brand">
+                        <a href="index.html" class="brand-logo">
+                            <i class="fas fa-gem"></i>
+                            <span>AMAZING AURA</span>
+                        </a>
+                    </div>
+                    <p class="footer-description">
+                        Crafting amazing aura fragrances that define your unique essence.
+                    </p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-pinterest"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-title">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="shop.html">Shop</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-title">Customer Care</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Shipping Info</a></li>
+                        <li><a href="#">Returns</a></li>
+                        <li><a href="#">Size Guide</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section contact-section">
+                    <h4 class="footer-title">Contact</h4>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span>+1 (555) 123-4567</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>hello@amazingaura.com</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="footer-bottom-content">
+                    <p class="copyright">&copy; 2024 Amazing Aura Perfumes. All rights reserved.</p>
+                    <div class="footer-legal">
+                        <a href="#">Privacy Policy</a>
+                        <a href="#">Terms of Service</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/shop.js"></script>
+</body>
+</html>
