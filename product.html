@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Midnight Elegance - Amazing Aura Perfumes</title>
+    <meta name="description" content="Discover Midnight Elegance, a sophisticated blend of black orchid, vanilla, and sandalwood. Experience luxury fragrance at its finest.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/product.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <a href="index.html" class="brand-logo">
+                    <i class="fas fa-gem"></i>
+                    <span>AMAZING AURA</span>
+                </a>
+            </div>
+            
+            <div class="nav-menu" id="navMenu">
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="shop.html" class="nav-link">Collections <i class="fas fa-chevron-down"></i></a>
+                        <div class="dropdown-menu">
+                            <a href="shop.html?filter=signature" class="dropdown-item">Signature Series</a>
+                            <a href="shop.html?filter=limited" class="dropdown-item">Limited Edition</a>
+                            <a href="shop.html?filter=classic" class="dropdown-item">Classic Collection</a>
+                            <a href="shop.html?filter=seasonal" class="dropdown-item">Seasonal Scents</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a href="about.html" class="nav-link">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="contact.html" class="nav-link">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="nav-actions">
+                <button class="search-btn" id="searchBtn">
+                    <i class="fas fa-search"></i>
+                </button>
+                <button class="cart-btn" id="cartBtn">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span class="cart-count">0</span>
+                </button>
+                <button class="menu-toggle" id="menuToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Search Overlay -->
+        <div class="search-overlay" id="searchOverlay">
+            <div class="search-container">
+                <input type="text" placeholder="Search fragrances..." class="search-input" id="searchInput">
+                <button class="search-close" id="searchClose">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb -->
+    <section class="breadcrumb">
+        <div class="container">
+            <nav class="breadcrumb-nav">
+                <a href="index.html">Home</a>
+                <i class="fas fa-chevron-right"></i>
+                <a href="shop.html">Collections</a>
+                <i class="fas fa-chevron-right"></i>
+                <span>Midnight Elegance</span>
+            </nav>
+        </div>
+    </section>
+
+    <!-- Product Detail -->
+    <section class="product-detail">
+        <div class="container">
+            <div class="product-layout">
+                <!-- Product Images -->
+                <div class="product-images">
+                    <div class="main-image">
+                        <img src="https://images.unsplash.com/photo-1541643600914-78b084683601?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Midnight Elegance" id="mainProductImage">
+                        <div class="image-badge">Bestseller</div>
+                    </div>
+                    <div class="thumbnail-images">
+                        <img src="https://images.unsplash.com/photo-1541643600914-78b084683601?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Midnight Elegance" class="thumbnail active">
+                        <img src="https://images.unsplash.com/photo-1594736797933-d0401ba2fe65?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Midnight Elegance Detail" class="thumbnail">
+                        <img src="https://images.unsplash.com/photo-1615634260167-c8cdede054de?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Midnight Elegance Packaging" class="thumbnail">
+                    </div>
+                </div>
+
+                <!-- Product Info -->
+                <div class="product-info">
+                    <div class="product-category">Signature Collection</div>
+                    <h1 class="product-title">Midnight Elegance</h1>
+                    
+                    <div class="product-rating">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <span class="rating-text">4.8 (127 reviews)</span>
+                    </div>
+
+                    <div class="product-price">
+                        <span class="current-price">$189.99</span>
+                        <span class="original-price">$229.99</span>
+                        <span class="discount">Save 17%</span>
+                    </div>
+
+                    <div class="product-description">
+                        <p>A sophisticated blend of black orchid, vanilla, and sandalwood that captures the mystery of the night. This luxurious fragrance opens with intoxicating black orchid, transitions to warm vanilla heart notes, and settles into a rich sandalwood base.</p>
+                    </div>
+
+                    <div class="product-notes">
+                        <h3>Fragrance Notes</h3>
+                        <div class="notes-grid">
+                            <div class="note-item">
+                                <div class="note-type">Top Notes</div>
+                                <div class="note-list">Black Orchid, Bergamot</div>
+                            </div>
+                            <div class="note-item">
+                                <div class="note-type">Heart Notes</div>
+                                <div class="note-list">Vanilla, Rose, Jasmine</div>
+                            </div>
+                            <div class="note-item">
+                                <div class="note-type">Base Notes</div>
+                                <div class="note-list">Sandalwood, Musk, Amber</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="product-options">
+                        <div class="size-selector">
+                            <h3>Size</h3>
+                            <div class="size-options">
+                                <button class="size-option" data-size="30ml" data-price="189.99">
+                                    <span class="size-volume">30ml</span>
+                                    <span class="size-price">$189.99</span>
+                                </button>
+                                <button class="size-option active" data-size="50ml" data-price="289.99">
+                                    <span class="size-volume">50ml</span>
+                                    <span class="size-price">$289.99</span>
+                                </button>
+                                <button class="size-option" data-size="100ml" data-price="389.99">
+                                    <span class="size-volume">100ml</span>
+                                    <span class="size-price">$389.99</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="quantity-selector">
+                            <h3>Quantity</h3>
+                            <div class="quantity-controls">
+                                <button class="quantity-btn minus">-</button>
+                                <input type="number" class="quantity-input" value="1" min="1" max="10">
+                                <button class="quantity-btn plus">+</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="product-actions">
+                        <button class="btn btn-primary add-to-cart-btn">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span>Add to Cart</span>
+                        </button>
+                        <button class="btn btn-outline wishlist-btn">
+                            <i class="fas fa-heart"></i>
+                            <span>Add to Wishlist</span>
+                        </button>
+                    </div>
+
+                    <div class="product-features">
+                        <div class="feature">
+                            <i class="fas fa-shipping-fast"></i>
+                            <span>Free shipping on orders over $75</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-undo"></i>
+                            <span>30-day return policy</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-certificate"></i>
+                            <span>Authentic guarantee</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Tabs -->
+    <section class="product-tabs">
+        <div class="container">
+            <div class="tabs-header">
+                <button class="tab-btn active" data-tab="description">Description</button>
+                <button class="tab-btn" data-tab="ingredients">Ingredients</button>
+                <button class="tab-btn" data-tab="reviews">Reviews (127)</button>
+                <button class="tab-btn" data-tab="shipping">Shipping</button>
+            </div>
+
+            <div class="tabs-content">
+                <div class="tab-panel active" id="description">
+                    <h3>About Midnight Elegance</h3>
+                    <p>Midnight Elegance is more than just a fragrance—it's an experience that transforms the ordinary into the extraordinary. Crafted by our master perfumers using the finest ingredients sourced from around the world, this sophisticated scent tells a story of mystery, allure, and timeless elegance.</p>
+                    
+                    <h4>The Inspiration</h4>
+                    <p>Inspired by the enchanting beauty of a moonlit garden, Midnight Elegance captures the essence of a romantic evening where shadows dance and secrets whisper. The fragrance opens with the intoxicating allure of black orchid, a rare and precious flower that blooms only in darkness.</p>
+                    
+                    <h4>The Experience</h4>
+                    <p>As the fragrance develops, warm vanilla emerges, wrapping you in a comforting embrace that speaks of luxury and sophistication. The journey concludes with the grounding presence of sandalwood, creating a lasting impression that lingers long after you've left the room.</p>
+                </div>
+
+                <div class="tab-panel" id="ingredients">
+                    <h3>Premium Ingredients</h3>
+                    <div class="ingredients-list">
+                        <div class="ingredient-category">
+                            <h4>Top Notes</h4>
+                            <ul>
+                                <li><strong>Black Orchid Extract:</strong> Rare and exotic, sourced from sustainable farms in Thailand</li>
+                                <li><strong>Bergamot Oil:</strong> Fresh citrus from the hills of Calabria, Italy</li>
+                            </ul>
+                        </div>
+                        <div class="ingredient-category">
+                            <h4>Heart Notes</h4>
+                            <ul>
+                                <li><strong>Madagascar Vanilla:</strong> Pure vanilla absolute from premium beans</li>
+                                <li><strong>Bulgarian Rose:</strong> Delicate rose petals harvested at dawn</li>
+                                <li><strong>Jasmine Sambac:</strong> Night-blooming jasmine from India</li>
+                            </ul>
+                        </div>
+                        <div class="ingredient-category">
+                            <h4>Base Notes</h4>
+                            <ul>
+                                <li><strong>Mysore Sandalwood:</strong> Creamy, sustainable sandalwood from India</li>
+                                <li><strong>White Musk:</strong> Clean, synthetic musk for longevity</li>
+                                <li><strong>Amber Resin:</strong> Warm, golden amber from ancient trees</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-panel" id="reviews">
+                    <div class="reviews-summary">
+                        <div class="rating-overview">
+                            <div class="overall-rating">
+                                <span class="rating-number">4.8</span>
+                                <div class="rating-stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <span class="rating-count">Based on 127 reviews</span>
+                            </div>
+                            <div class="rating-breakdown">
+                                <div class="rating-bar">
+                                    <span>5 stars</span>
+                                    <div class="bar"><div class="fill" style="width: 78%"></div></div>
+                                    <span>78%</span>
+                                </div>
+                                <div class="rating-bar">
+                                    <span>4 stars</span>
+                                    <div class="bar"><div class="fill" style="width: 15%"></div></div>
+                                    <span>15%</span>
+                                </div>
+                                <div class="rating-bar">
+                                    <span>3 stars</span>
+                                    <div class="bar"><div class="fill" style="width: 5%"></div></div>
+                                    <span>5%</span>
+                                </div>
+                                <div class="rating-bar">
+                                    <span>2 stars</span>
+                                    <div class="bar"><div class="fill" style="width: 1%"></div></div>
+                                    <span>1%</span>
+                                </div>
+                                <div class="rating-bar">
+                                    <span>1 star</span>
+                                    <div class="bar"><div class="fill" style="width: 1%"></div></div>
+                                    <span>1%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="reviews-list">
+                        <div class="review-item">
+                            <div class="review-header">
+                                <div class="reviewer-info">
+                                    <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="Sarah M." class="reviewer-avatar">
+                                    <div>
+                                        <h4>Sarah M.</h4>
+                                        <div class="review-rating">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <span class="review-date">2 weeks ago</span>
+                            </div>
+                            <div class="review-content">
+                                <h5>Absolutely stunning fragrance!</h5>
+                                <p>This has become my signature scent. The longevity is incredible - I can still smell it on my clothes the next day. The black orchid is so unique and sophisticated. Worth every penny!</p>
+                            </div>
+                        </div>
+
+                        <div class="review-item">
+                            <div class="review-header">
+                                <div class="reviewer-info">
+                                    <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="Emma L." class="reviewer-avatar">
+                                    <div>
+                                        <h4>Emma L.</h4>
+                                        <div class="review-rating">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <span class="review-date">1 month ago</span>
+                            </div>
+                            <div class="review-content">
+                                <h5>Perfect for evening wear</h5>
+                                <p>I love how this fragrance evolves throughout the day. The vanilla comes through beautifully after a few hours. It's definitely a statement scent - I get compliments every time I wear it.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button class="btn btn-outline load-more-reviews">Load More Reviews</button>
+                </div>
+
+                <div class="tab-panel" id="shipping">
+                    <h3>Shipping Information</h3>
+                    <div class="shipping-options">
+                        <div class="shipping-option">
+                            <h4>Standard Shipping (Free)</h4>
+                            <p>5-7 business days • Free on orders over $75</p>
+                        </div>
+                        <div class="shipping-option">
+                            <h4>Express Shipping</h4>
+                            <p>2-3 business days • $15.99</p>
+                        </div>
+                        <div class="shipping-option">
+                            <h4>Overnight Shipping</h4>
+                            <p>Next business day • $29.99</p>
+                        </div>
+                    </div>
+                    
+                    <h4>Return Policy</h4>
+                    <p>We offer a 30-day satisfaction guarantee. If you're not completely satisfied with your purchase, you can return it within 30 days for a full refund, even if the bottle has been opened and used.</p>
+                    
+                    <h4>International Shipping</h4>
+                    <p>We ship to over 50 countries worldwide. International shipping rates and delivery times vary by destination. Customs duties and taxes may apply.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Related Products -->
+    <section class="related-products">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">You Might Also Like</h2>
+            </div>
+            
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1588405748880-12d1d2a59d32?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Golden Dawn">
+                        <div class="product-actions">
+                            <button class="action-btn"><i class="fas fa-eye"></i></button>
+                            <button class="action-btn"><i class="fas fa-heart"></i></button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Golden Dawn</h3>
+                        <p class="product-price">$159.99</p>
+                        <div class="product-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1594736797933-d0401ba2fe65?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Ocean Breeze">
+                        <div class="product-actions">
+                            <button class="action-btn"><i class="fas fa-eye"></i></button>
+                            <button class="action-btn"><i class="fas fa-heart"></i></button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Ocean Breeze</h3>
+                        <p class="product-price">$129.99</p>
+                        <div class="product-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1615634260167-c8cdede054de?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Rose Noir">
+                        <div class="product-actions">
+                            <button class="action-btn"><i class="fas fa-eye"></i></button>
+                            <button class="action-btn"><i class="fas fa-heart"></i></button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Rose Noir</h3>
+                        <p class="product-price">$199.99</p>
+                        <div class="product-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section brand-section">
+                    <div class="footer-brand">
+                        <a href="index.html" class="brand-logo">
+                            <i class="fas fa-gem"></i>
+                            <span>AMAZING AURA</span>
+                        </a>
+                    </div>
+                    <p class="footer-description">
+                        Crafting amazing aura fragrances that define your unique essence.
+                    </p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-pinterest"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-title">Collections</h4>
+                    <ul class="footer-links">
+                        <li><a href="shop.html?filter=signature">Signature Series</a></li>
+                        <li><a href="shop.html?filter=limited">Limited Edition</a></li>
+                        <li><a href="shop.html?filter=classic">Classic Collection</a></li>
+                        <li><a href="shop.html?filter=seasonal">Seasonal Scents</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-title">Customer Care</h4>
+                    <ul class="footer-links">
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="#shipping">Shipping Info</a></li>
+                        <li><a href="#returns">Returns</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section contact-section">
+                    <h4 class="footer-title">Contact</h4>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span>+1 (555) 123-4567</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>hello@amazingaura.com</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="footer-bottom-content">
+                    <p class="copyright">&copy; 2024 Amazing Aura Perfumes. All rights reserved.</p>
+                    <div class="footer-legal">
+                        <a href="#privacy">Privacy Policy</a>
+                        <a href="#terms">Terms of Service</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/product.js"></script>
+</body>
+</html>

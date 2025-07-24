@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Amazing Aura Perfumes</title>
+    <meta name="description" content="Discover the story behind Amazing Aura Perfumes. Learn about our passion for creating luxury fragrances and our commitment to excellence.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/about.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <a href="index.html" class="brand-logo">
+                    <i class="fas fa-gem"></i>
+                    <span>AMAZING AURA</span>
+                </a>
+            </div>
+            
+            <div class="nav-menu" id="navMenu">
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="shop.html" class="nav-link">Collections <i class="fas fa-chevron-down"></i></a>
+                        <div class="dropdown-menu">
+                            <a href="shop.html?filter=signature" class="dropdown-item">Signature Series</a>
+                            <a href="shop.html?filter=limited" class="dropdown-item">Limited Edition</a>
+                            <a href="shop.html?filter=classic" class="dropdown-item">Classic Collection</a>
+                            <a href="shop.html?filter=seasonal" class="dropdown-item">Seasonal Scents</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a href="about.html" class="nav-link active">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="contact.html" class="nav-link">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="nav-actions">
+                <button class="search-btn" id="searchBtn">
+                    <i class="fas fa-search"></i>
+                </button>
+                <button class="cart-btn" id="cartBtn">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span class="cart-count">0</span>
+                </button>
+                <button class="menu-toggle" id="menuToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Search Overlay -->
+        <div class="search-overlay" id="searchOverlay">
+            <div class="search-container">
+                <input type="text" placeholder="Search fragrances..." class="search-input" id="searchInput">
+                <button class="search-close" id="searchClose">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- About Hero -->
+    <section class="about-hero">
+        <div class="about-hero-background">
+            <img src="https://images.unsplash.com/photo-1556228578-8c89e6adf883?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80" alt="About Amazing Aura">
+            <div class="about-hero-overlay"></div>
+        </div>
+        <div class="container">
+            <div class="about-hero-content">
+                <h1 class="about-title">Our Story</h1>
+                <p class="about-subtitle">Crafting exceptional fragrances since 2020</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Story Section -->
+    <section class="story-section">
+        <div class="container">
+            <div class="story-content">
+                <div class="story-text">
+                    <div class="section-subtitle">Our Beginning</div>
+                    <h2 class="section-title">A Passion for Perfection</h2>
+                    <p class="story-description">
+                        Amazing Aura Perfumes was born from a simple yet profound belief: that fragrance has the power to transform moments into memories, and memories into lasting impressions. Founded in 2020 by master perfumer Elena Rodriguez, our journey began in a small atelier in the heart of Grasse, France.
+                    </p>
+                    <p class="story-description">
+                        What started as a personal quest to create the perfect scent has evolved into a luxury fragrance house that celebrates individuality, craftsmanship, and the art of storytelling through scent. Each bottle in our collection represents countless hours of meticulous blending, testing, and refinement.
+                    </p>
+                </div>
+                <div class="story-image">
+                    <img src="https://images.unsplash.com/photo-1594736797933-d0401ba2fe65?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Our Story">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Values Section -->
+    <section class="values-section">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-subtitle">Our Values</div>
+                <h2 class="section-title">What Drives Us</h2>
+            </div>
+            <div class="values-grid">
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h3>Sustainability</h3>
+                    <p>We source our ingredients ethically and use eco-friendly packaging to minimize our environmental impact.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-gem"></i>
+                    </div>
+                    <h3>Quality</h3>
+                    <p>Every fragrance is crafted with the finest ingredients and undergoes rigorous quality testing.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3>Passion</h3>
+                    <p>Our love for perfumery drives us to create unique scents that tell your personal story.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Community</h3>
+                    <p>We believe in building lasting relationships with our customers and supporting local communities.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="team-section">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-subtitle">Meet Our Team</div>
+                <h2 class="section-title">The Artisans Behind the Scents</h2>
+            </div>
+            <div class="team-grid">
+                <div class="team-member">
+                    <div class="member-image">
+                        <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Elena Rodriguez">
+                    </div>
+                    <div class="member-info">
+                        <h3>Elena Rodriguez</h3>
+                        <p class="member-role">Founder & Master Perfumer</p>
+                        <p class="member-bio">With over 20 years of experience in perfumery, Elena brings her passion for creating unique scents to every fragrance.</p>
+                    </div>
+                </div>
+                <div class="team-member">
+                    <div class="member-image">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Marcus Chen">
+                    </div>
+                    <div class="member-info">
+                        <h3>Marcus Chen</h3>
+                        <p class="member-role">Head of Product Development</p>
+                        <p class="member-bio">Marcus oversees the development of new fragrances, ensuring each scent meets our high standards of quality.</p>
+                    </div>
+                </div>
+                <div class="team-member">
+                    <div class="member-image">
+                        <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Sophie Laurent">
+                    </div>
+                    <div class="member-info">
+                        <h3>Sophie Laurent</h3>
+                        <p class="member-role">Creative Director</p>
+                        <p class="member-bio">Sophie leads our creative vision, from packaging design to brand storytelling and customer experience.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="process-section">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-subtitle">Our Process</div>
+                <h2 class="section-title">From Concept to Creation</h2>
+            </div>
+            <div class="process-timeline">
+                <div class="timeline-item">
+                    <div class="timeline-number">01</div>
+                    <div class="timeline-content">
+                        <h3>Inspiration</h3>
+                        <p>Every fragrance begins with inspiration - a memory, emotion, or story that we want to capture in scent.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-number">02</div>
+                    <div class="timeline-content">
+                        <h3>Sourcing</h3>
+                        <p>We carefully select the finest raw materials from trusted suppliers around the world.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-number">03</div>
+                    <div class="timeline-content">
+                        <h3>Blending</h3>
+                        <p>Our master perfumers blend ingredients with precision, creating unique compositions through countless iterations.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-number">04</div>
+                    <div class="timeline-content">
+                        <h3>Testing</h3>
+                        <p>Each fragrance undergoes rigorous testing for quality, longevity, and overall olfactory experience.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-number">05</div>
+                    <div class="timeline-content">
+                        <h3>Perfection</h3>
+                        <p>Only when we're completely satisfied with the result do we bottle and present our creation to you.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Experience Our Fragrances</h2>
+                <p>Discover the perfect scent that tells your unique story</p>
+                <a href="shop.html" class="btn btn-primary">Shop Collection</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section brand-section">
+                    <div class="footer-brand">
+                        <a href="index.html" class="brand-logo">
+                            <i class="fas fa-gem"></i>
+                            <span>AMAZING AURA</span>
+                        </a>
+                    </div>
+                    <p class="footer-description">
+                        Crafting amazing aura fragrances that define your unique essence.
+                    </p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-pinterest"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-title">Collections</h4>
+                    <ul class="footer-links">
+                        <li><a href="shop.html?filter=signature">Signature Series</a></li>
+                        <li><a href="shop.html?filter=limited">Limited Edition</a></li>
+                        <li><a href="shop.html?filter=classic">Classic Collection</a></li>
+                        <li><a href="shop.html?filter=seasonal">Seasonal Scents</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-title">Customer Care</h4>
+                    <ul class="footer-links">
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="#shipping">Shipping Info</a></li>
+                        <li><a href="#returns">Returns</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section contact-section">
+                    <h4 class="footer-title">Contact</h4>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span>+1 (555) 123-4567</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>hello@amazingaura.com</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="footer-bottom-content">
+                    <p class="copyright">&copy; 2024 Amazing Aura Perfumes. All rights reserved.</p>
+                    <div class="footer-legal">
+                        <a href="#privacy">Privacy Policy</a>
+                        <a href="#terms">Terms of Service</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
