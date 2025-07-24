@@ -11,7 +11,7 @@ let currentFilters = {
 // Sample product data
 const sampleProducts = [
     {
-        id: 'midnight-rose',
+        id: 'midnight-flower',
         name: 'Midnight Rose',
         price: 89.99,
         description: 'A sensual blend of dark rose and warm vanilla',
