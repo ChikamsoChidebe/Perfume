@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel - Amazing Aura Perfumes</title>
+    <meta name="description" content="Admin panel for managing Amazing Aura Perfumes products and inventory.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/admin.css">
+</head>
+<body class="admin-body">
+    <!-- Admin Header -->
+    <header class="admin-header">
+        <div class="admin-container">
+            <div class="admin-brand">
+                <a href="index.html" class="brand-logo">
+                    <i class="fas fa-gem"></i>
+                    <span>AMAZING AURA</span>
+                </a>
+                <span class="admin-badge">Admin Panel</span>
+            </div>
+            
+            <div class="admin-nav">
+                <button class="nav-btn active" data-section="dashboard">
+                    <i class="fas fa-chart-line"></i>
+                    <span>Dashboard</span>
+                </button>
+                <button class="nav-btn" data-section="products">
+                    <i class="fas fa-box"></i>
+                    <span>Products</span>
+                </button>
+                <button class="nav-btn" data-section="add-product">
+                    <i class="fas fa-plus"></i>
+                    <span>Add Product</span>
+                </button>
+            </div>
+            
+            <div class="admin-actions">
+                <button class="btn btn-outline" onclick="window.open('index.html', '_blank')">
+                    <i class="fas fa-external-link-alt"></i>
+                    <span>View Site</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Admin Content -->
+    <main class="admin-main">
+        <!-- Dashboard Section -->
+        <section class="admin-section active" id="dashboard">
+            <div class="admin-container">
+                <div class="section-header">
+                    <h1>Dashboard</h1>
+                    <p>Overview of your perfume store</p>
+                </div>
+                
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-box"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3 id="totalProducts">0</h3>
+                            <p>Total Products</p>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3 id="inStockProducts">0</h3>
+                            <p>In Stock</p>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3 id="featuredProducts">0</h3>
+                            <p>Featured</p>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-exclamation-triangle"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3 id="outOfStockProducts">0</h3>
+                            <p>Out of Stock</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="dashboard-grid">
+                    <div class="dashboard-card">
+                        <h3>Recent Products</h3>
+                        <div class="recent-products" id="recentProducts">
+                            <!-- Recent products will be loaded here -->
+                        </div>
+                    </div>
+                    
+                    <div class="dashboard-card">
+                        <h3>Category Distribution</h3>
+                        <div class="category-chart" id="categoryChart">
+                            <!-- Category chart will be loaded here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Products Section -->
+        <section class="admin-section" id="products">
+            <div class="admin-container">
+                <div class="section-header">
+                    <h1>Products</h1>
+                    <p>Manage your perfume collection</p>
+                </div>
+                
+                <div class="products-controls">
+                    <div class="search-box">
+                        <input type="text" id="productSearch" placeholder="Search products...">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    
+                    <div class="filter-controls">
+                        <select id="categoryFilter">
+                            <option value="">All Categories</option>
+                            <option value="signature">Signature</option>
+                            <option value="limited">Limited Edition</option>
+                            <option value="classic">Classic</option>
+                            <option value="fresh">Fresh</option>
+                            <option value="seasonal">Seasonal</option>
+                        </select>
+                        
+                        <select id="stockFilter">
+                            <option value="">All Stock Status</option>
+                            <option value="in-stock">In Stock</option>
+                            <option value="out-of-stock">Out of Stock</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="products-table-container">
+                    <table class="products-table">
+                        <thead>
+                            <tr>
+                                <th>Image</th>
+                                <th>Name</th>
+                                <th>Category</th>
+                                <th>Contact</th>
+                                <th>Stock</th>
+                                <th>Rating</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="productsTableBody">
+                            <!-- Products will be loaded here -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- Add Product Section -->
+        <section class="admin-section" id="add-product">
+            <div class="admin-container">
+                <div class="section-header">
+                    <h1>Add New Product</h1>
+                    <p>Create a new perfume product</p>
+                </div>
+                
+                <form class="product-form" id="addProductForm">
+                    <div class="form-grid">
+                        <div class="form-section">
+                            <h3>Basic Information</h3>
+                            
+                            <div class="form-group">
+                                <label for="productName">Product Name *</label>
+                                <input type="text" id="productName" name="name" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="productCategory">Category *</label>
+                                <select id="productCategory" name="category" required>
+                                    <option value="">Select Category</option>
+                                    <option value="signature">Signature Collection</option>
+                                    <option value="limited">Limited Edition</option>
+                                    <option value="classic">Classic Collection</option>
+                                    <option value="fresh">Fresh Collection</option>
+                                    <option value="seasonal">Seasonal Collection</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="productDescription">Description *</label>
+                                <textarea id="productDescription" name="description" rows="4" required></textarea>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="productGender">Gender</label>
+                                <select id="productGender" name="gender">
+                                    <option value="unisex">Unisex</option>
+                                    <option value="men">Men</option>
+                                    <option value="women">Women</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="form-section">
+                            <h3>Contact Information</h3>
+                            
+                            <div class="contact-info">
+                                <p><strong>WhatsApp:</strong> 07068045006</p>
+                                <p><strong>Email:</strong> amazingperfume.ng@gmail.com</p>
+                                <p><em>Customers will contact via WhatsApp for pricing</em></p>
+                            </div>
+                        </div>
+                        
+                        <div class="form-section">
+                            <h3>Images</h3>
+                            
+                            <div class="form-group">
+                                <label for="productImages">Product Images (URLs)</label>
+                                <div class="image-inputs">
+                                    <input type="url" name="image1" placeholder="Main image URL">
+                                    <input type="url" name="image2" placeholder="Second image URL">
+                                    <input type="url" name="image3" placeholder="Third image URL">
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-section">
+                            <h3>Fragrance Notes</h3>
+                            
+                            <div class="notes-grid">
+                                <div class="form-group">
+                                    <label for="topNotes">Top Notes</label>
+                                    <input type="text" id="topNotes" name="topNotes" placeholder="e.g., Bergamot, Lemon, Orange">
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="heartNotes">Heart Notes</label>
+                                    <input type="text" id="heartNotes" name="heartNotes" placeholder="e.g., Rose, Jasmine, Vanilla">
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="baseNotes">Base Notes</label>
+                                    <input type="text" id="baseNotes" name="baseNotes" placeholder="e.g., Sandalwood, Musk, Amber">
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-section">
+                            <h3>Additional Details</h3>
+                            
+                            <div class="details-grid">
+                                <div class="form-group">
+                                    <label for="productIntensity">Intensity</label>
+                                    <select id="productIntensity" name="intensity">
+                                        <option value="light">Light</option>
+                                        <option value="moderate">Moderate</option>
+                                        <option value="strong">Strong</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="productLongevity">Longevity</label>
+                                    <select id="productLongevity" name="longevity">
+                                        <option value="2-4 hours">2-4 hours</option>
+                                        <option value="4-6 hours">4-6 hours</option>
+                                        <option value="6-8 hours">6-8 hours</option>
+                                        <option value="8-12 hours">8-12 hours</option>
+                                        <option value="12+ hours">12+ hours</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="productSillage">Sillage</label>
+                                    <select id="productSillage" name="sillage">
+                                        <option value="light">Light</option>
+                                        <option value="moderate">Moderate</option>
+                                        <option value="heavy">Heavy</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <div class="checkbox-group">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="featured">
+                                    <span class="checkmark"></span>
+                                    Featured Product
+                                </label>
+                                
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="inStock" checked>
+                                    <span class="checkmark"></span>
+                                    In Stock
+                                </label>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="productBadge">Badge (Optional)</label>
+                                <input type="text" id="productBadge" name="badge" placeholder="e.g., New, Bestseller, Limited">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-actions">
+                        <button type="button" class="btn btn-outline" onclick="document.getElementById('addProductForm').reset()">
+                            <i class="fas fa-undo"></i>
+                            <span>Reset Form</span>
+                        </button>
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-plus"></i>
+                            <span>Add Product</span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+
+    </main>
+
+    <!-- Mobile Navigation -->
+    <nav class="mobile-nav">
+        <div class="mobile-nav-container">
+            <button class="mobile-nav-btn active" data-section="dashboard">
+                <i class="fas fa-chart-line"></i>
+                <span>Dashboard</span>
+            </button>
+            <button class="mobile-nav-btn" data-section="products">
+                <i class="fas fa-box"></i>
+                <span>Products</span>
+            </button>
+            <button class="mobile-nav-btn" data-section="add-product">
+                <i class="fas fa-plus"></i>
+                <span>Add</span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Edit Product Modal -->
+    <div class="modal" id="editProductModal">
+        <div class="modal-overlay"></div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Edit Product</h2>
+                <button class="modal-close" onclick="closeEditModal()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="editProductForm">
+                    <!-- Edit form will be populated dynamically -->
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Delete Confirmation Modal -->
+    <div class="modal" id="deleteModal">
+        <div class="modal-overlay"></div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Confirm Delete</h2>
+                <button class="modal-close" onclick="closeDeleteModal()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Are you sure you want to delete this product? This action cannot be undone.</p>
+                <div class="modal-actions">
+                    <button class="btn btn-outline" onclick="closeDeleteModal()">Cancel</button>
+                    <button class="btn btn-danger" id="confirmDeleteBtn">Delete Product</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="assets/js/database.js"></script>
+    <script src="assets/js/admin.js"></script>
+</body>
+</html>

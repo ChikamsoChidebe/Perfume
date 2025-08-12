@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wishlist - Amazing Aura Perfumes</title>
+    <meta name="description" content="Your saved luxury fragrances and favorite scents.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/wishlist.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <a href="index.html" class="brand-logo">
+                    <i class="fas fa-gem"></i>
+                    <span>AMAZING AURA</span>
+                </a>
+            </div>
+            
+            <div class="nav-menu" id="navMenu">
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="shop.html" class="nav-link">Collections <i class="fas fa-chevron-down"></i></a>
+                        <div class="dropdown-menu">
+                            <a href="shop.html?filter=signature" class="dropdown-item">Signature Series</a>
+                            <a href="shop.html?filter=limited" class="dropdown-item">Limited Edition</a>
+                            <a href="shop.html?filter=classic" class="dropdown-item">Classic Collection</a>
+                            <a href="shop.html?filter=fresh" class="dropdown-item">Fresh Collection</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a href="about.html" class="nav-link">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="contact.html" class="nav-link">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="nav-actions">
+                <button class="search-btn" id="searchBtn">
+                    <i class="fas fa-search"></i>
+                </button>
+                <a href="cart.html" class="cart-btn" id="cartBtn">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span class="cart-count">0</span>
+                </a>
+                <button class="menu-toggle" id="menuToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Search Overlay -->
+        <div class="search-overlay" id="searchOverlay">
+            <div class="search-container">
+                <input type="text" placeholder="Search fragrances..." class="search-input" id="searchInput">
+                <button class="search-close" id="searchClose">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb -->
+    <section class="breadcrumb">
+        <div class="container">
+            <nav class="breadcrumb-nav">
+                <a href="index.html">Home</a>
+                <i class="fas fa-chevron-right"></i>
+                <span>Wishlist</span>
+            </nav>
+        </div>
+    </section>
+
+    <!-- Wishlist Page -->
+    <section class="wishlist-page">
+        <div class="container">
+            <div class="wishlist-header">
+                <h1 class="wishlist-title">My Wishlist</h1>
+                <p class="wishlist-subtitle">Your saved fragrances</p>
+            </div>
+
+            <div class="wishlist-content" id="wishlistContent">
+                <!-- Wishlist items will be loaded here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section brand-section">
+                    <div class="footer-brand">
+                        <a href="index.html" class="brand-logo">
+                            <i class="fas fa-gem"></i>
+                            <span>AMAZING AURA</span>
+                        </a>
+                    </div>
+                    <p class="footer-description">
+                        Crafting amazing aura fragrances that define your unique essence.
+                    </p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-pinterest"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-title">Collections</h4>
+                    <ul class="footer-links">
+                        <li><a href="shop.html?filter=signature">Signature Series</a></li>
+                        <li><a href="shop.html?filter=limited">Limited Edition</a></li>
+                        <li><a href="shop.html?filter=classic">Classic Collection</a></li>
+                        <li><a href="shop.html?filter=fresh">Fresh Collection</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-title">Customer Care</h4>
+                    <ul class="footer-links">
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="#shipping">Shipping Info</a></li>
+                        <li><a href="#returns">Returns</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section contact-section">
+                    <h4 class="footer-title">Contact</h4>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span>+1 (555) 123-4567</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>hello@amazingaura.com</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="footer-bottom-content">
+                    <p class="copyright">&copy; 2024 Amazing Aura Perfumes. All rights reserved.</p>
+                    <div class="footer-legal">
+                        <a href="#privacy">Privacy Policy</a>
+                        <a href="#terms">Terms of Service</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="assets/js/database.js"></script>
+    <script src="assets/js/cart.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script>
+        // Wishlist Page Manager
+        class WishlistManager {
+            constructor() {
+                this.wishlist = [];
+                this.init();
+            }
+
+            init() {
+                this.loadWishlist();
+                this.bindEvents();
+            }
+
+            bindEvents() {
+                document.addEventListener('click', (e) => {
+                    if (e.target.closest('.remove-wishlist')) {
+                        const productId = e.target.closest('.remove-wishlist').dataset.product;
+                        this.removeFromWishlist(productId);
+                    }
+
+                    if (e.target.closest('.add-to-cart-wishlist')) {
+                        const productId = e.target.closest('.add-to-cart-wishlist').dataset.product;
+                        this.addToCartFromWishlist(productId);
+                    }
+                });
+            }
+
+            loadWishlist() {
+                this.wishlist = JSON.parse(localStorage.getItem('amazingaura_wishlist') || '[]');
+                this.displayWishlist();
+            }
+
+            displayWishlist() {
+                const content = document.getElementById('wishlistContent');
+                
+                if (this.wishlist.length === 0) {
+                    content.innerHTML = this.getEmptyWishlistHTML();
+                    return;
+                }
+
+                content.innerHTML = `
+                    <div class="wishlist-actions">
+                        <div class="wishlist-count">${this.wishlist.length} item${this.wishlist.length !== 1 ? 's' : ''}</div>
+                        <button class="clear-wishlist">Clear All</button>
+                    </div>
+                    <div class="wishlist-grid">
+                        ${this.wishlist.map(item => this.getWishlistItemHTML(item)).join('')}
+                    </div>
+                `;
+            }
+
+            getEmptyWishlistHTML() {
+                return `
+                    <div class="empty-wishlist">
+                        <div class="empty-wishlist-icon">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <h2>Your wishlist is empty</h2>
+                        <p>Save your favorite fragrances to easily find them later</p>
+                        <div class="empty-wishlist-actions">
+                            <a href="shop.html" class="btn btn-primary">Browse Fragrances</a>
+                            <a href="index.html#quiz" class="btn btn-outline">Take Quiz</a>
+                        </div>
+                    </div>
+                `;
+            }
+
+            getWishlistItemHTML(item) {
+                const product = window.productDB.getProductById(item.id);
+                if (!product) return '';
+
+                return `
+                    <div class="wishlist-item">
+                        <div class="item-image">
+                            <img src="${product.images[0]}" alt="${product.name}">
+                            <button class="remove-wishlist" data-product="${product.id}">
+                                <i class="fas fa-times"></i>
+                            </button>
+                        </div>
+                        <div class="item-content">
+                            <div class="item-category">${product.category.charAt(0).toUpperCase() + product.category.slice(1)}</div>
+                            <h3 class="item-name">
+                                <a href="product.html?id=${product.id}">${product.name}</a>
+                            </h3>
+                            <div class="item-rating">
+                                <div class="stars">
+                                    ${this.generateStars(product.rating)}
+                                </div>
+                                <span class="rating-count">(${product.reviews})</span>
+                            </div>
+                            <p class="item-description">${product.description.substring(0, 100)}...</p>
+                            <div class="item-notes">
+                                ${product.notes.top.slice(0, 3).map(note => `<span class="note">${note}</span>`).join('')}
+                            </div>
+                            <div class="item-footer">
+                                <div class="item-price">
+                                    <span class="current-price">$${product.price['50ml']}</span>
+                                    ${product.originalPrice ? `<span class="original-price">$${product.originalPrice['50ml']}</span>` : ''}
+                                </div>
+                                <div class="item-actions">
+                                    <button class="btn btn-primary add-to-cart-wishlist" data-product="${product.id}">
+                                        <i class="fas fa-shopping-cart"></i>
+                                        <span>Add to Cart</span>
+                                    </button>
+                                    <a href="product.html?id=${product.id}" class="btn btn-outline">
+                                        <span>View Details</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }
+
+            generateStars(rating) {
+                const fullStars = Math.floor(rating);
+                const hasHalfStar = rating % 1 >= 0.5;
+                let stars = '';
+                
+                for (let i = 0; i < fullStars; i++) {
+                    stars += '<i class="fas fa-star"></i>';
+                }
+                
+                if (hasHalfStar) {
+                    stars += '<i class="fas fa-star-half-alt"></i>';
+                }
+                
+                for (let i = fullStars + (hasHalfStar ? 1 : 0); i < 5; i++) {
+                    stars += '<i class="far fa-star"></i>';
+                }
+                
+                return stars;
+            }
+
+            removeFromWishlist(productId) {
+                if (window.cartSystem) {
+                    window.cartSystem.removeFromWishlist(productId);
+                    this.loadWishlist();
+                }
+            }
+
+            addToCartFromWishlist(productId) {
+                const product = window.productDB.getProductById(productId);
+                if (product && window.cartSystem) {
+                    const cartProduct = {
+                        id: product.id,
+                        name: product.name,
+                        price: product.price['50ml'],
+                        image: product.images[0]
+                    };
+                    window.cartSystem.addToCart(cartProduct);
+                }
+            }
+        }
+
+        // Initialize wishlist page
+        document.addEventListener('DOMContentLoaded', () => {
+            new WishlistManager();
+        });
+    </script>
+</body>
+</html>

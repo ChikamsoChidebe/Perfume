@@ -14,9 +14,13 @@
     <!-- Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
+    <!-- AOS Animation -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+    
     <!-- CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/shop.css">
+    <link rel="stylesheet" href="assets/css/shop-gallery.css">
 </head>
 <body>
     <!-- Navigation -->
@@ -28,23 +32,14 @@
                     <span>AMAZING AURA</span>
                 </a>
             </div>
-
-
-            <!-- new changes -->
             
             <div class="nav-menu" id="navMenu">
                 <ul class="nav-list">
                     <li class="nav-item">
                         <a href="index.html" class="nav-link">Home</a>
                     </li>
-                    <li class="nav-item dropdown">
-                        <a href="shop.html" class="nav-link active">Collections <i class="fas fa-chevron-down"></i></a>
-                        <div class="dropdown-menu">
-                            <a href="shop.html?filter=signature" class="dropdown-item">Signature Series</a>
-                            <a href="shop.html?filter=limited" class="dropdown-item">Limited Edition</a>
-                            <a href="shop.html?filter=classic" class="dropdown-item">Classic Collection</a>
-                            <a href="shop.html?filter=seasonal" class="dropdown-item">Seasonal Scents</a>
-                        </div>
+                    <li class="nav-item">
+                        <a href="shop.html" class="nav-link active">Collections</a>
                     </li>
                     <li class="nav-item">
                         <a href="about.html" class="nav-link">About</a>
@@ -59,14 +54,24 @@
                 <button class="search-btn" id="searchBtn">
                     <i class="fas fa-search"></i>
                 </button>
-                <button class="cart-btn" id="cartBtn">
+                <a href="cart.html" class="cart-btn" id="cartBtn">
                     <i class="fas fa-shopping-bag"></i>
                     <span class="cart-count">0</span>
-                </button>
+                </a>
                 <button class="menu-toggle" id="menuToggle">
                     <span></span>
                     <span></span>
                     <span></span>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Search Overlay -->
+        <div class="search-overlay" id="searchOverlay">
+            <div class="search-container">
+                <input type="text" placeholder="Search fragrances..." class="search-input" id="searchInput">
+                <button class="search-close" id="searchClose">
+                    <i class="fas fa-times"></i>
                 </button>
             </div>
         </div>
@@ -76,16 +81,16 @@
     <section class="shop-header">
         <div class="shop-hero">
             <div class="shop-hero-background">
-                <img src="https://images.unsplash.com/photo-1563170351-be82bc888aa4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2000&q=80" alt="Perfume Collection">
+                <img src="https://images.unsplash.com/photo-1563170351-be82bc888aa4?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80" alt="Perfume Collection">
                 <div class="shop-hero-overlay"></div>
             </div>
             <div class="container">
-                <div class="shop-hero-content">
+                <div class="shop-hero-content" data-aos="fade-up">
                     <h1 class="shop-title">Luxury Fragrance Collection</h1>
                     <p class="shop-subtitle">Discover your signature scent from our curated selection of premium perfumes</p>
                     <div class="shop-stats">
                         <div class="stat-item">
-                            <span class="stat-number">50+</span>
+                            <span class="stat-number" id="totalProductsCount">0</span>
                             <span class="stat-label">Unique Fragrances</span>
                         </div>
                         <div class="stat-item">
@@ -107,43 +112,39 @@
         <div class="container">
             <div class="shop-layout">
                 <!-- Filters Sidebar -->
-                <aside class="shop-sidebar">
+                <aside class="shop-sidebar" data-aos="fade-right">
                     <div class="filter-section">
                         <h3 class="filter-title">Categories</h3>
                         <div class="filter-group">
                             <label class="filter-option">
-                                <input type="checkbox" name="category" value="all" checked>
-                                <span class="checkmark"></span>
+                                <input type="radio" name="category" value="" checked>
+                                <span class="radiomark"></span>
                                 All Fragrances
                             </label>
                             <label class="filter-option">
-                                <input type="checkbox" name="category" value="signature">
-                                <span class="checkmark"></span>
+                                <input type="radio" name="category" value="signature">
+                                <span class="radiomark"></span>
                                 Signature Series
                             </label>
                             <label class="filter-option">
-                                <input type="checkbox" name="category" value="limited">
-                                <span class="checkmark"></span>
+                                <input type="radio" name="category" value="limited">
+                                <span class="radiomark"></span>
                                 Limited Edition
                             </label>
                             <label class="filter-option">
-                                <input type="checkbox" name="category" value="classic">
-                                <span class="checkmark"></span>
+                                <input type="radio" name="category" value="classic">
+                                <span class="radiomark"></span>
                                 Classic Collection
+                            </label>
+                            <label class="filter-option">
+                                <input type="radio" name="category" value="fresh">
+                                <span class="radiomark"></span>
+                                Fresh Collection
                             </label>
                         </div>
                     </div>
 
-                    <div class="filter-section">
-                        <h3 class="filter-title">Price Range</h3>
-                        <div class="price-range">
-                            <input type="range" id="priceRange" min="50" max="300" value="300" class="price-slider">
-                            <div class="price-display">
-                                <span>$50</span>
-                                <span id="maxPrice">$300</span>
-                            </div>
-                        </div>
-                    </div>
+
 
                     <div class="filter-section">
                         <h3 class="filter-title">Fragrance Notes</h3>
@@ -168,45 +169,66 @@
                                 <span class="checkmark"></span>
                                 Oriental
                             </label>
+                            <label class="filter-option">
+                                <input type="checkbox" name="notes" value="citrus">
+                                <span class="checkmark"></span>
+                                Citrus
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" name="notes" value="vanilla">
+                                <span class="checkmark"></span>
+                                Vanilla
+                            </label>
                         </div>
                     </div>
 
                     <div class="filter-section">
-                        <h3 class="filter-title">Gender</h3>
+                        <h3 class="filter-title">Intensity</h3>
                         <div class="filter-group">
                             <label class="filter-option">
-                                <input type="radio" name="gender" value="all" checked>
+                                <input type="radio" name="intensity" value="">
                                 <span class="radiomark"></span>
-                                All
+                                All Intensities
                             </label>
                             <label class="filter-option">
-                                <input type="radio" name="gender" value="women">
+                                <input type="radio" name="intensity" value="light">
                                 <span class="radiomark"></span>
-                                Women
+                                Light
                             </label>
                             <label class="filter-option">
-                                <input type="radio" name="gender" value="men">
+                                <input type="radio" name="intensity" value="moderate">
                                 <span class="radiomark"></span>
-                                Men
+                                Moderate
                             </label>
                             <label class="filter-option">
-                                <input type="radio" name="gender" value="unisex">
+                                <input type="radio" name="intensity" value="strong">
                                 <span class="radiomark"></span>
-                                Unisex
+                                Strong
                             </label>
                         </div>
                     </div>
 
-                    <button class="btn btn-outline clear-filters">Clear All Filters</button>
+                    <div class="filter-actions">
+                        <button class="btn btn-outline clear-filters">Clear All Filters</button>
+                    </div>
                 </aside>
 
                 <!-- Products Grid -->
                 <main class="shop-main">
-                    <div class="shop-toolbar">
-                        <div class="shop-results">
-                            <span id="resultsCount">24</span> products found
+                    <div class="shop-controls" data-aos="fade-left">
+                        <div class="results-info">
+                            <span id="resultsCount">0</span> products found
                         </div>
-                        <div class="shop-controls">
+                        
+                        <div class="sort-controls">
+                            <select id="sortSelect">
+                                <option value="name">Sort by Name</option>
+                                <option value="price-low">Price: Low to High</option>
+                                <option value="price-high">Price: High to Low</option>
+                                <option value="rating">Highest Rated</option>
+                                <option value="newest">Newest First</option>
+                            </select>
+                            
                             <div class="view-toggle">
                                 <button class="view-btn active" data-view="grid">
                                     <i class="fas fa-th"></i>
@@ -215,33 +237,16 @@
                                     <i class="fas fa-list"></i>
                                 </button>
                             </div>
-                            <select class="sort-select" id="sortSelect">
-                                <option value="featured">Featured</option>
-                                <option value="price-low">Price: Low to High</option>
-                                <option value="price-high">Price: High to Low</option>
-                                <option value="name">Name: A to Z</option>
-                                <option value="newest">Newest First</option>
-                            </select>
                         </div>
                     </div>
-
+                    
                     <div class="products-grid" id="productsGrid">
-                        <!-- Product cards will be dynamically generated -->
+                        <!-- Products will be loaded dynamically -->
                     </div>
-
-                    <div class="pagination">
-                        <button class="pagination-btn prev" disabled>
-                            <i class="fas fa-chevron-left"></i>
-                        </button>
-                        <div class="pagination-numbers">
-                            <button class="pagination-number active">1</button>
-                            <button class="pagination-number">2</button>
-                            <button class="pagination-number">3</button>
-                            <span class="pagination-dots">...</span>
-                            <button class="pagination-number">8</button>
-                        </div>
-                        <button class="pagination-btn next">
-                            <i class="fas fa-chevron-right"></i>
+                    
+                    <div class="load-more-container" id="loadMoreContainer" style="display: none;">
+                        <button class="btn btn-outline load-more-btn" id="loadMoreBtn">
+                            Load More Products
                         </button>
                     </div>
                 </main>
@@ -249,34 +254,18 @@
         </div>
     </section>
 
-    <!-- Newsletter -->
-    <section class="newsletter">
-        <div class="newsletter-background">
-            <img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80" alt="Newsletter Background">
-            <div class="newsletter-overlay"></div>
-        </div>
-        
-        <div class="container">
-            <div class="newsletter-content">
-                <div class="newsletter-text">
-                    <h2 class="newsletter-title">Stay Updated</h2>
-                    <p class="newsletter-subtitle">
-                        Get notified about new arrivals and exclusive offers
-                    </p>
-                </div>
-                
-                <form class="newsletter-form" id="newsletterForm">
-                    <div class="form-group">
-                        <input type="email" placeholder="Enter your email address" class="newsletter-input" required>
-                        <button type="submit" class="newsletter-btn">
-                            <span>Subscribe</span>
-                            <i class="fas fa-arrow-right"></i>
-                        </button>
-                    </div>
-                </form>
+    <!-- Quick View Modal -->
+    <div class="modal" id="quickViewModal">
+        <div class="modal-overlay"></div>
+        <div class="modal-content">
+            <button class="modal-close" id="modalClose">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="modal-body" id="modalBody">
+                <!-- Quick view content will be loaded here -->
             </div>
         </div>
-    </section>
+    </div>
 
     <!-- Footer -->
     <footer class="footer">
@@ -301,22 +290,22 @@
                 </div>
                 
                 <div class="footer-section">
-                    <h4 class="footer-title">Quick Links</h4>
+                    <h4 class="footer-title">Collections</h4>
                     <ul class="footer-links">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="shop.html">Shop</a></li>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="shop.html?filter=signature">Signature Series</a></li>
+                        <li><a href="shop.html?filter=limited">Limited Edition</a></li>
+                        <li><a href="shop.html?filter=classic">Classic Collection</a></li>
+                        <li><a href="shop.html?filter=fresh">Fresh Collection</a></li>
                     </ul>
                 </div>
                 
                 <div class="footer-section">
                     <h4 class="footer-title">Customer Care</h4>
                     <ul class="footer-links">
-                        <li><a href="#">Shipping Info</a></li>
-                        <li><a href="#">Returns</a></li>
-                        <li><a href="#">Size Guide</a></li>
-                        <li><a href="#">FAQ</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="#shipping">Shipping Info</a></li>
+                        <li><a href="#returns">Returns</a></li>
+                        <li><a href="#faq">FAQ</a></li>
                     </ul>
                 </div>
                 
@@ -325,11 +314,11 @@
                     <div class="contact-info">
                         <div class="contact-item">
                             <i class="fas fa-phone"></i>
-                            <span>+234 (555) 123-4567</span>
+                            <span>+234 706 804 5006</span>
                         </div>
                         <div class="contact-item">
                             <i class="fas fa-envelope"></i>
-                            <span>hello@amazingaura.com</span>
+                            <span>amazingperfume.ng@gmail.com</span>
                         </div>
                     </div>
                 </div>
@@ -339,8 +328,8 @@
                 <div class="footer-bottom-content">
                     <p class="copyright">&copy; 2024 Amazing Aura Perfumes. All rights reserved.</p>
                     <div class="footer-legal">
-                        <a href="#">Privacy Policy</a>
-                        <a href="#">Terms of Service</a>
+                        <a href="#privacy">Privacy Policy</a>
+                        <a href="#terms">Terms of Service</a>
                     </div>
                 </div>
             </div>
@@ -348,7 +337,422 @@
     </footer>
 
     <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="assets/js/database.js"></script>
+    <script src="assets/js/cart.js"></script>
     <script src="assets/js/main.js"></script>
-    <script src="assets/js/shop.js"></script>
+    <script>
+        // Shop-specific functionality
+        class ShopManager {
+            constructor() {
+                this.currentProducts = [];
+                this.filteredProducts = [];
+                this.currentView = 'grid';
+                this.productsPerPage = 12;
+                this.currentPage = 1;
+                this.init();
+            }
+
+            init() {
+                this.loadProducts();
+                this.bindEvents();
+                this.handleURLParams();
+                
+                // Initialize AOS
+                if (typeof AOS !== 'undefined') {
+                    AOS.init({
+                        duration: 600,
+                        easing: 'ease-in-out',
+                        once: true
+                    });
+                }
+            }
+
+            loadProducts() {
+                this.currentProducts = window.productDB.getAllProducts();
+                this.filteredProducts = [...this.currentProducts];
+                this.updateProductsDisplay();
+                this.updateResultsCount();
+                
+                // Update total products count in hero
+                document.getElementById('totalProductsCount').textContent = this.currentProducts.length;
+            }
+
+            bindEvents() {
+                // Filter events
+                document.querySelectorAll('input[name="category"]').forEach(input => {
+                    input.addEventListener('change', () => this.applyFilters());
+                });
+
+                document.querySelectorAll('input[name="notes"]').forEach(input => {
+                    input.addEventListener('change', () => this.applyFilters());
+                });
+
+                document.querySelectorAll('input[name="intensity"]').forEach(input => {
+                    input.addEventListener('change', () => this.applyFilters());
+                });
+
+                // Price range
+                const priceRange = document.getElementById('priceRange');
+                if (priceRange) {
+                    priceRange.addEventListener('input', (e) => {
+                        document.getElementById('maxPrice').textContent = '$' + e.target.value;
+                        this.applyFilters();
+                    });
+                }
+
+                // Sort
+                const sortSelect = document.getElementById('sortSelect');
+                if (sortSelect) {
+                    sortSelect.addEventListener('change', () => this.sortProducts());
+                }
+
+                // View toggle
+                document.querySelectorAll('.view-btn').forEach(btn => {
+                    btn.addEventListener('click', (e) => {
+                        const view = e.currentTarget.dataset.view;
+                        this.toggleView(view);
+                    });
+                });
+
+                // Clear filters
+                const clearBtn = document.querySelector('.clear-filters');
+                if (clearBtn) {
+                    clearBtn.addEventListener('click', () => this.clearFilters());
+                }
+
+                // Product interactions
+                document.addEventListener('click', (e) => {
+                    if (e.target.closest('.quick-view')) {
+                        const productId = e.target.closest('.quick-view').dataset.product;
+                        this.showQuickView(productId);
+                    }
+                    
+                    if (e.target.closest('.add-to-cart')) {
+                        const productId = e.target.closest('.add-to-cart').dataset.product;
+                        this.addToCart(productId);
+                    }
+                    
+                    if (e.target.closest('.wishlist')) {
+                        const productId = e.target.closest('.wishlist').dataset.product;
+                        this.toggleWishlist(productId);
+                    }
+                });
+            }
+
+            handleURLParams() {
+                const urlParams = new URLSearchParams(window.location.search);
+                const filter = urlParams.get('filter');
+                const search = urlParams.get('search');
+
+                if (filter) {
+                    const categoryInput = document.querySelector(`input[name="category"][value="${filter}"]`);
+                    if (categoryInput) {
+                        categoryInput.checked = true;
+                        this.applyFilters();
+                    }
+                }
+
+                if (search) {
+                    this.searchProducts(search);
+                }
+            }
+
+            applyFilters() {
+                const category = document.querySelector('input[name="category"]:checked')?.value || '';
+                const intensity = document.querySelector('input[name="intensity"]:checked')?.value || '';
+                const maxPrice = parseInt(document.getElementById('priceRange').value);
+                const selectedNotes = Array.from(document.querySelectorAll('input[name="notes"]:checked')).map(input => input.value);
+
+                let filtered = this.currentProducts;
+
+                // Category filter
+                if (category) {
+                    filtered = filtered.filter(product => product.category === category);
+                }
+
+                // Intensity filter
+                if (intensity) {
+                    filtered = filtered.filter(product => product.intensity === intensity);
+                }
+
+                // Price filter removed - no prices to filter
+
+                // Notes filter
+                if (selectedNotes.length > 0) {
+                    filtered = filtered.filter(product => {
+                        const allNotes = [...product.notes.top, ...product.notes.heart, ...product.notes.base];
+                        return selectedNotes.some(note => 
+                            allNotes.some(productNote => 
+                                productNote.toLowerCase().includes(note.toLowerCase())
+                            )
+                        );
+                    });
+                }
+
+                this.filteredProducts = filtered;
+                this.currentPage = 1;
+                this.updateProductsDisplay();
+                this.updateResultsCount();
+            }
+
+            searchProducts(query) {
+                this.filteredProducts = window.productDB.searchProducts(query);
+                this.updateProductsDisplay();
+                this.updateResultsCount();
+            }
+
+            sortProducts() {
+                const sortValue = document.getElementById('sortSelect').value;
+                
+                this.filteredProducts.sort((a, b) => {
+                    switch (sortValue) {
+                        case 'name':
+                            return a.name.localeCompare(b.name);
+                        case 'price-low':
+                            return a.price['50ml'] - b.price['50ml'];
+                        case 'price-high':
+                            return b.price['50ml'] - a.price['50ml'];
+                        case 'rating':
+                            return b.rating - a.rating;
+                        case 'newest':
+                            return new Date(b.dateAdded) - new Date(a.dateAdded);
+                        default:
+                            return 0;
+                    }
+                });
+
+                this.updateProductsDisplay();
+            }
+
+            updateProductsDisplay() {
+                const grid = document.getElementById('productsGrid');
+                if (!grid) return;
+
+                if (this.filteredProducts.length === 0) {
+                    grid.innerHTML = `
+                        <div class="no-products">
+                            <i class="fas fa-search"></i>
+                            <h3>No products found</h3>
+                            <p>Try adjusting your filters or search terms</p>
+                            <button class="btn btn-primary clear-filters">Clear Filters</button>
+                        </div>
+                    `;
+                    return;
+                }
+
+                grid.className = `products-grid ${this.currentView}-view`;
+                grid.innerHTML = this.filteredProducts.map((product, index) => `
+                    <div class="product-card" data-aos="fade-up" data-aos-delay="${(index % 12) * 50}">
+                        <div class="product-image">
+                            <div class="image-gallery">
+                                ${product.images.slice(0, 4).map((img, i) => `
+                                    <img src="${img}" alt="${product.name} ${i + 1}" class="gallery-image ${i === 0 ? 'active' : ''}" loading="lazy">
+                                `).join('')}
+                            </div>
+                            <div class="image-indicators">
+                                ${product.images.slice(0, 4).map((_, i) => `
+                                    <span class="indicator ${i === 0 ? 'active' : ''}" data-index="${i}"></span>
+                                `).join('')}
+                            </div>
+                            <div class="product-overlay">
+                                <div class="product-actions">
+                                    <button class="action-btn quick-view" data-product="${product.id}" title="Quick View">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                    <button class="action-btn add-to-cart" data-product="${product.id}" title="Add to Cart">
+                                        <i class="fas fa-shopping-cart"></i>
+                                    </button>
+                                    <button class="action-btn wishlist" data-product="${product.id}" title="Add to Wishlist">
+                                        <i class="fas fa-heart"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            ${product.badge ? `<div class="product-badge">${product.badge}</div>` : ''}
+                        </div>
+                        <div class="product-info">
+                            <div class="product-category">${product.category.charAt(0).toUpperCase() + product.category.slice(1)}</div>
+                            <h3 class="product-name">
+                                <a href="product.html?id=${product.id}">${product.name}</a>
+                            </h3>
+                            <div class="product-rating">
+                                <div class="stars">
+                                    ${this.generateStars(product.rating)}
+                                </div>
+                                <span class="rating-count">(${product.reviews})</span>
+                            </div>
+                            <div class="product-price">
+                                <span class="contact-price">Contact for Price</span>
+                                <a href="https://wa.me/2347068045006" class="whatsapp-price">
+                                    <i class="fab fa-whatsapp"></i> WhatsApp
+                                </a>
+                            </div>
+                            <div class="product-notes">
+                                ${product.notes.top.slice(0, 3).map(note => `<span class="note">${note}</span>`).join('')}
+                            </div>
+                        </div>
+                    </div>
+                `).join('');
+                
+                // Add image gallery functionality
+                setTimeout(() => {
+                    this.initImageGalleries();
+                }, 100);
+            }
+
+            generateStars(rating) {
+                const fullStars = Math.floor(rating);
+                const hasHalfStar = rating % 1 >= 0.5;
+                const emptyStars = 5 - fullStars - (hasHalfStar ? 1 : 0);
+
+                let stars = '';
+                
+                for (let i = 0; i < fullStars; i++) {
+                    stars += '<i class="fas fa-star"></i>';
+                }
+                
+                if (hasHalfStar) {
+                    stars += '<i class="fas fa-star-half-alt"></i>';
+                }
+                
+                for (let i = 0; i < emptyStars; i++) {
+                    stars += '<i class="far fa-star"></i>';
+                }
+                
+                return stars;
+            }
+
+            updateResultsCount() {
+                const countElement = document.getElementById('resultsCount');
+                if (countElement) {
+                    countElement.textContent = this.filteredProducts.length;
+                }
+            }
+
+            toggleView(view) {
+                this.currentView = view;
+                
+                document.querySelectorAll('.view-btn').forEach(btn => {
+                    btn.classList.remove('active');
+                });
+                document.querySelector(`[data-view="${view}"]`).classList.add('active');
+                
+                this.updateProductsDisplay();
+            }
+
+            clearFilters() {
+                // Reset all filters
+                document.querySelectorAll('input[type="radio"]').forEach(input => {
+                    input.checked = input.value === '';
+                });
+                document.querySelectorAll('input[type="checkbox"]').forEach(input => {
+                    input.checked = false;
+                });
+                
+                this.filteredProducts = [...this.currentProducts];
+                this.updateProductsDisplay();
+                this.updateResultsCount();
+            }
+            
+            initImageGalleries() {
+                document.querySelectorAll('.product-card').forEach(card => {
+                    const indicators = card.querySelectorAll('.indicator');
+                    const images = card.querySelectorAll('.gallery-image');
+                    
+                    indicators.forEach((indicator, index) => {
+                        indicator.addEventListener('click', () => {
+                            // Remove active class from all
+                            indicators.forEach(ind => ind.classList.remove('active'));
+                            images.forEach(img => img.classList.remove('active'));
+                            
+                            // Add active class to clicked
+                            indicator.classList.add('active');
+                            images[index].classList.add('active');
+                        });
+                    });
+                });
+            }
+
+            addToCart(productId) {
+                const product = window.productDB.getProductById(productId);
+                if (product && window.cartSystem) {
+                    const cartProduct = {
+                        id: product.id,
+                        name: product.name,
+                        price: product.price['50ml'],
+                        image: product.images[0]
+                    };
+                    window.cartSystem.addToCart(cartProduct);
+                }
+            }
+
+            toggleWishlist(productId) {
+                const product = window.productDB.getProductById(productId);
+                if (product && window.cartSystem) {
+                    const wishlistProduct = {
+                        id: product.id,
+                        name: product.name,
+                        price: product.price['50ml'],
+                        image: product.images[0]
+                    };
+                    
+                    if (window.cartSystem.isInWishlist(productId)) {
+                        window.cartSystem.removeFromWishlist(productId);
+                    } else {
+                        window.cartSystem.addToWishlist(wishlistProduct);
+                    }
+                }
+            }
+
+            showQuickView(productId) {
+                const product = window.productDB.getProductById(productId);
+                if (!product) return;
+
+                const modal = document.getElementById('quickViewModal');
+                const modalBody = document.getElementById('modalBody');
+                
+                if (modalBody) {
+                    modalBody.innerHTML = `
+                        <div class="quick-view-content">
+                            <div class="quick-view-image">
+                                <img src="${product.images[0]}" alt="${product.name}">
+                            </div>
+                            <div class="quick-view-details">
+                                <div class="product-category">${product.category}</div>
+                                <h2>${product.name}</h2>
+                                <div class="product-rating">
+                                    <div class="stars">${this.generateStars(product.rating)}</div>
+                                    <span>(${product.reviews} reviews)</span>
+                                </div>
+                                <p class="quick-view-price">$${product.price['50ml']}</p>
+                                <p class="quick-view-description">${product.description}</p>
+                                <div class="quick-view-notes">
+                                    <strong>Top Notes:</strong> ${product.notes.top.join(', ')}
+                                </div>
+                                <div class="quick-view-actions">
+                                    <button class="btn btn-primary add-to-cart" data-product="${product.id}">
+                                        <i class="fas fa-shopping-cart"></i>
+                                        Add to Cart
+                                    </button>
+                                    <a href="product.html?id=${product.id}" class="btn btn-outline">
+                                        View Details
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                }
+                
+                if (modal) {
+                    modal.classList.add('active');
+                }
+            }
+        }
+
+        // Initialize shop when DOM is loaded
+        document.addEventListener('DOMContentLoaded', () => {
+            new ShopManager();
+        });
+    </script>
 </body>
 </html>

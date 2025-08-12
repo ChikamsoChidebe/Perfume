@@ -34,14 +34,8 @@
                     <li class="nav-item">
                         <a href="index.html" class="nav-link">Home</a>
                     </li>
-                    <li class="nav-item dropdown">
-                        <a href="shop.html" class="nav-link">Collections <i class="fas fa-chevron-down"></i></a>
-                        <div class="dropdown-menu">
-                            <a href="shop.html?filter=signature" class="dropdown-item">Signature Series</a>
-                            <a href="shop.html?filter=limited" class="dropdown-item">Limited Edition</a>
-                            <a href="shop.html?filter=classic" class="dropdown-item">Classic Collection</a>
-                            <a href="shop.html?filter=seasonal" class="dropdown-item">Seasonal Scents</a>
-                        </div>
+                    <li class="nav-item">
+                        <a href="shop.html" class="nav-link">Collections</a>
                     </li>
                     <li class="nav-item">
                         <a href="about.html" class="nav-link">About</a>
@@ -56,10 +50,10 @@
                 <button class="search-btn" id="searchBtn">
                     <i class="fas fa-search"></i>
                 </button>
-                <button class="cart-btn" id="cartBtn">
+                <a href="cart.html" class="cart-btn" id="cartBtn">
                     <i class="fas fa-shopping-bag"></i>
                     <span class="cart-count">0</span>
-                </button>
+                </a>
                 <button class="menu-toggle" id="menuToggle">
                     <span></span>
                     <span></span>
@@ -126,9 +120,13 @@
                     </div>
 
                     <div class="product-price">
-                        <span class="current-price">$189.99</span>
-                        <span class="original-price">$229.99</span>
-                        <span class="discount">Save 17%</span>
+                        <span class="contact-price">Contact for Price</span>
+                        <div class="whatsapp-contact">
+                            <a href="https://wa.me/2347068045006" class="whatsapp-link">
+                                <i class="fab fa-whatsapp"></i>
+                                <span>WhatsApp: +234 706 804 5006</span>
+                            </a>
+                        </div>
                     </div>
 
                     <div class="product-description">
@@ -155,19 +153,19 @@
 
                     <div class="product-options">
                         <div class="size-selector">
-                            <h3>Size</h3>
+                            <h3>Available Sizes</h3>
                             <div class="size-options">
-                                <button class="size-option" data-size="30ml" data-price="189.99">
+                                <button class="size-option" data-size="30ml">
                                     <span class="size-volume">30ml</span>
-                                    <span class="size-price">$189.99</span>
+                                    <span class="size-price">Available</span>
                                 </button>
-                                <button class="size-option active" data-size="50ml" data-price="289.99">
+                                <button class="size-option active" data-size="50ml">
                                     <span class="size-volume">50ml</span>
-                                    <span class="size-price">$289.99</span>
+                                    <span class="size-price">Available</span>
                                 </button>
-                                <button class="size-option" data-size="100ml" data-price="389.99">
+                                <button class="size-option" data-size="100ml">
                                     <span class="size-volume">100ml</span>
-                                    <span class="size-price">$389.99</span>
+                                    <span class="size-price">Available</span>
                                 </button>
                             </div>
                         </div>
@@ -196,7 +194,7 @@
                     <div class="product-features">
                         <div class="feature">
                             <i class="fas fa-shipping-fast"></i>
-                            <span>Free shipping on orders over $75</span>
+                            <span>Delivery available in Nigeria</span>
                         </div>
                         <div class="feature">
                             <i class="fas fa-undo"></i>
@@ -403,7 +401,7 @@
                     </div>
                     <div class="product-info">
                         <h3>Golden Dawn</h3>
-                        <p class="product-price">$159.99</p>
+                        <p class="product-price">Contact for Price</p>
                         <div class="product-rating">
                             <div class="stars">
                                 <i class="fas fa-star"></i>
@@ -426,7 +424,7 @@
                     </div>
                     <div class="product-info">
                         <h3>Ocean Breeze</h3>
-                        <p class="product-price">$129.99</p>
+                        <p class="product-price">Contact for Price</p>
                         <div class="product-rating">
                             <div class="stars">
                                 <i class="fas fa-star"></i>
@@ -449,7 +447,7 @@
                     </div>
                     <div class="product-info">
                         <h3>Rose Noir</h3>
-                        <p class="product-price">$199.99</p>
+                        <p class="product-price">Contact for Price</p>
                         <div class="product-rating">
                             <div class="stars">
                                 <i class="fas fa-star"></i>
@@ -512,11 +510,11 @@
                     <div class="contact-info">
                         <div class="contact-item">
                             <i class="fas fa-phone"></i>
-                            <span>+1 (555) 123-4567</span>
+                            <span>+234 706 804 5006</span>
                         </div>
                         <div class="contact-item">
                             <i class="fas fa-envelope"></i>
-                            <span>hello@amazingaura.com</span>
+                            <span>amazingperfume.ng@gmail.com</span>
                         </div>
                     </div>
                 </div>
@@ -535,6 +533,8 @@
     </footer>
 
     <!-- Scripts -->
+    <script src="assets/js/database.js"></script>
+    <script src="assets/js/cart.js"></script>
     <script src="assets/js/main.js"></script>
     <script src="assets/js/product.js"></script>
 </body>

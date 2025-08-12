@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Amazing Aura Perfumes - Premium Fragrance Collection</title>
-    <meta name="description" content="Discover luxury fragrances crafted with the finest ingredients. Premium perfumes for the modern connoisseur.">
+    <title>Amazing Aura Perfumes - Luxury Fragrances</title>
+    <meta name="description" content="Discover luxury fragrances at Amazing Aura Perfumes. Premium perfumes crafted with the finest ingredients for your unique essence.">
     
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -14,28 +14,20 @@
     <!-- Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
+    <!-- AOS Animation -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+    
     <!-- CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
-    
-    <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
 </head>
 <body>
     <!-- Loading Screen -->
     <div class="loading-screen" id="loadingScreen">
         <div class="loading-content">
             <div class="loading-logo">
-                <svg viewBox="0 0 100 100" class="loading-svg">
-                    <circle cx="50" cy="50" r="45" stroke="url(#gradient)" stroke-width="2" fill="none" stroke-dasharray="283" stroke-dashoffset="283">
-                        <animate attributeName="stroke-dashoffset" dur="2s" values="283;0;283" repeatCount="indefinite"/>
-                    </circle>
-                    <defs>
-                        <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                            <stop offset="0%" style="stop-color:#d4af37;stop-opacity:1" />
-                            <stop offset="100%" style="stop-color:#ffd700;stop-opacity:1" />
-                        </linearGradient>
-                    </defs>
-                </svg>
+                <div class="logo-animation">
+                    <i class="fas fa-gem"></i>
+                </div>
             </div>
             <h2 class="loading-text">AMAZING AURA</h2>
             <div class="loading-bar">
@@ -48,7 +40,7 @@
     <nav class="navbar" id="navbar">
         <div class="nav-container">
             <div class="nav-brand">
-                <a href="#" class="brand-logo">
+                <a href="index.html" class="brand-logo">
                     <i class="fas fa-gem"></i>
                     <span>AMAZING AURA</span>
                 </a>
@@ -57,25 +49,16 @@
             <div class="nav-menu" id="navMenu">
                 <ul class="nav-list">
                     <li class="nav-item">
-                        <a href="#home" class="nav-link active">Home</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a href="#collections" class="nav-link">Collections <i class="fas fa-chevron-down"></i></a>
-                        <div class="dropdown-menu">
-                            <a href="#" class="dropdown-item">Signature Series</a>
-                            <a href="#" class="dropdown-item">Limited Edition</a>
-                            <a href="#" class="dropdown-item">Classic Collection</a>
-                            <a href="#" class="dropdown-item">Seasonal Scents</a>
-                        </div>
+                        <a href="index.html" class="nav-link active">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#about" class="nav-link">About</a>
+                        <a href="shop.html" class="nav-link">Collections</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#experience" class="nav-link">Experience</a>
+                        <a href="about.html" class="nav-link">About</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#contact" class="nav-link">Contact</a>
+                        <a href="contact.html" class="nav-link">Contact</a>
                     </li>
                 </ul>
             </div>
@@ -84,10 +67,14 @@
                 <button class="search-btn" id="searchBtn">
                     <i class="fas fa-search"></i>
                 </button>
-                <button class="cart-btn" id="cartBtn">
+                <a href="wishlist.html" class="wishlist-btn" id="wishlistBtn">
+                    <i class="fas fa-heart"></i>
+                    <span class="wishlist-count">0</span>
+                </a>
+                <a href="cart.html" class="cart-btn" id="cartBtn">
                     <i class="fas fa-shopping-bag"></i>
                     <span class="cart-count">0</span>
-                </button>
+                </a>
                 <button class="menu-toggle" id="menuToggle">
                     <span></span>
                     <span></span>
@@ -110,14 +97,17 @@
     <!-- Hero Section -->
     <section class="hero" id="home">
         <div class="hero-background">
-            <div class="hero-image-container">
-                <img src="https://videos.openai.com/vg-assets/assets%2Ftask_01k078bfx6ez9bze81nsa3653c%2F1752590439_img_0.webp?st=2025-07-15T13%3A04%3A02Z&se=2025-07-21T14%3A04%3A02Z&sks=b&skt=2025-07-15T13%3A04%3A02Z&ske=2025-07-21T14%3A04%3A02Z&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skoid=aa5ddad1-c91a-4f0a-9aca-e20682cc8969&skv=2019-02-02&sv=2018-11-09&sr=b&sp=r&spr=https%2Chttp&sig=%2BYGOpGfjuWmjfVEzO5HdsjSCXNCsiBSSoPjpgQWri2I%3D&az=oaivgprodscus" alt="Amazing Aura Perfumes Hero" class="hero-image">
+            <div class="hero-video-container">
+                <video autoplay muted loop playsinline class="hero-video" poster="https://i.pinimg.com/1200x/f3/cf/92/f3cf928047c54d47f228954661d2e6f9.jpg">
+                    <source src="aura.mp4" type="video/mp4">
+                    <source src="aura.mp4" type="video/mp4">
+                </video>
                 <div class="hero-overlay"></div>
             </div>
         </div>
         
         <div class="hero-content">
-            <div class="hero-text">
+            <div class="hero-text" data-aos="fade-up" data-aos-delay="300">
                 <h1 class="hero-title">
                     <span class="title-line">Discover Your</span>
                     <span class="title-line highlight">Signature Scent</span>
@@ -130,14 +120,14 @@
                         <span>Explore Collection</span>
                         <i class="fas fa-arrow-right"></i>
                     </button>
-                    <button class="btn btn-secondary hero-btn" id="watchBtn">
-                        <i class="fas fa-play"></i>
-                        <span>Watch Story</span>
+                    <button class="btn btn-secondary hero-btn" id="quizBtn">
+                        <i class="fas fa-magic"></i>
+                        <span>Find My Scent</span>
                     </button>
                 </div>
             </div>
             
-            <div class="hero-features">
+            <div class="hero-features" data-aos="fade-up" data-aos-delay="600">
                 <div class="feature-item">
                     <div class="feature-icon">
                         <i class="fas fa-shipping-fast"></i>
@@ -181,7 +171,7 @@
     <!-- Featured Collections -->
     <section class="collections" id="collections">
         <div class="container">
-            <div class="section-header">
+            <div class="section-header" data-aos="fade-up">
                 <div class="section-subtitle">Premium Collections</div>
                 <h2 class="section-title">Signature Fragrances</h2>
                 <p class="section-description">
@@ -189,189 +179,54 @@
                 </p>
             </div>
             
-            <div class="collections-grid">
-                <div class="collection-card featured" data-aos="fade-up">
-                    <div class="card-image">
-                        <img src="https://images.unsplash.com/photo-1541643600914-78b084683601?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Midnight Elegance" loading="lazy">
-                        <div class="card-overlay">
-                            <div class="card-actions">
-                                <button class="action-btn quick-view" data-product="midnight-elegance">
-                                    <i class="fas fa-eye"></i>
-                                </button>
-                                <button class="action-btn add-to-cart" data-product="midnight-elegance">
-                                    <i class="fas fa-shopping-cart"></i>
-                                </button>
-                                <button class="action-btn wishlist" data-product="midnight-elegance">
-                                    <i class="fas fa-heart"></i>
-                                </button>
-                            </div>
-                        </div>
-                        <div class="card-badge">Bestseller</div>
-                    </div>
-                    <div class="card-content">
-                        <div class="card-category">Signature Collection</div>
-                        <h3 class="card-title">Midnight Elegance</h3>
-                        <p class="card-description">A sophisticated blend of black orchid, vanilla, and sandalwood that captures the mystery of the night.</p>
-                        <div class="card-notes">
-                            <span class="note">Black Orchid</span>
-                            <span class="note">Vanilla</span>
-                            <span class="note">Sandalwood</span>
-                        </div>
-                        <div class="card-footer">
-                            <div class="price">
-                                <span class="current-price">$189.99</span>
-                                <span class="original-price">$229.99</span>
-                            </div>
-                            <div class="rating">
-                                <div class="stars">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                </div>
-                                <span class="rating-count">(127)</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="collection-card" data-aos="fade-up" data-aos-delay="100">
-                    <div class="card-image">
-                        <img src="https://i.pinimg.com/1200x/92/29/61/92296122dea9a33ca2b0b72be4bd78d6.jpg" alt="Golden Dawn" loading="lazy">
-                        <div class="card-overlay">
-                            <div class="card-actions">
-                                <button class="action-btn quick-view" data-product="golden-dawn">
-                                    <i class="fas fa-eye"></i>
-                                </button>
-                                <button class="action-btn add-to-cart" data-product="golden-dawn">
-                                    <i class="fas fa-shopping-cart"></i>
-                                </button>
-                                <button class="action-btn wishlist" data-product="golden-dawn">
-                                    <i class="fas fa-heart"></i>
-                                </button>
-                            </div>
-                        </div>
-                        <div class="card-badge new">New</div>
-                    </div>
-                    <div class="card-content">
-                        <div class="card-category">Limited Edition</div>
-                        <h3 class="card-title">Golden Dawn</h3>
-                        <p class="card-description">Bright citrus notes meet warm amber in this uplifting fragrance that embodies the first light of day.</p>
-                        <div class="card-notes">
-                            <span class="note">Bergamot</span>
-                            <span class="note">Amber</span>
-                            <span class="note">Cedar</span>
-                        </div>
-                        <div class="card-footer">
-                            <div class="price">
-                                <span class="current-price">$159.99</span>
-                            </div>
-                            <div class="rating">
-                                <div class="stars">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="far fa-star"></i>
-                                </div>
-                                <span class="rating-count">(89)</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="collection-card" data-aos="fade-up" data-aos-delay="200">
-                    <div class="card-image">
-                        <img src="https://i.pinimg.com/736x/7c/09/81/7c09814c2887bf4122d53df18ee047b5.jpg" alt="Ocean Breeze" loading="lazy">
-                        <div class="card-overlay">
-                            <div class="card-actions">
-                                <button class="action-btn quick-view" data-product="ocean-breeze">
-                                    <i class="fas fa-eye"></i>
-                                </button>
-                                <button class="action-btn add-to-cart" data-product="ocean-breeze">
-                                    <i class="fas fa-shopping-cart"></i>
-                                </button>
-                                <button class="action-btn wishlist" data-product="ocean-breeze">
-                                    <i class="fas fa-heart"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card-content">
-                        <div class="card-category">Fresh Collection</div>
-                        <h3 class="card-title">Ocean Breeze</h3>
-                        <p class="card-description">Fresh marine notes combined with delicate jasmine create a refreshing escape to coastal paradise.</p>
-                        <div class="card-notes">
-                            <span class="note">Marine</span>
-                            <span class="note">Jasmine</span>
-                            <span class="note">Driftwood</span>
-                        </div>
-                        <div class="card-footer">
-                            <div class="price">
-                                <span class="current-price">$129.99</span>
-                            </div>
-                            <div class="rating">
-                                <div class="stars">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star-half-alt"></i>
-                                </div>
-                                <span class="rating-count">(156)</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="collection-card" data-aos="fade-up" data-aos-delay="300">
-                    <div class="card-image">
-                        <img src="https://images.unsplash.com/photo-1615634260167-c8cdede054de?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Rose Noir" loading="lazy">
-                        <div class="card-overlay">
-                            <div class="card-actions">
-                                <button class="action-btn quick-view" data-product="rose-noir">
-                                    <i class="fas fa-eye"></i>
-                                </button>
-                                <button class="action-btn add-to-cart" data-product="rose-noir">
-                                    <i class="fas fa-shopping-cart"></i>
-                                </button>
-                                <button class="action-btn wishlist" data-product="rose-noir">
-                                    <i class="fas fa-heart"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card-content">
-                        <div class="card-category">Classic Collection</div>
-                        <h3 class="card-title">Rose Noir</h3>
-                        <p class="card-description">Dark rose petals intertwined with mysterious patchouli and rich leather create an intoxicating allure.</p>
-                        <div class="card-notes">
-                            <span class="note">Dark Rose</span>
-                            <span class="note">Patchouli</span>
-                            <span class="note">Leather</span>
-                        </div>
-                        <div class="card-footer">
-                            <div class="price">
-                                <span class="current-price">$199.99</span>
-                            </div>
-                            <div class="rating">
-                                <div class="stars">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                </div>
-                                <span class="rating-count">(203)</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div class="collections-grid" id="featuredProducts">
+                <!-- Products will be loaded dynamically -->
             </div>
             
-            <div class="collections-cta">
-                <button class="btn btn-outline">View All Collections</button>
+            <div class="collections-cta" data-aos="fade-up">
+                <a href="shop.html" class="btn btn-primary">View All Products</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Scent Discovery -->
+    <section class="scent-discovery" id="discovery">
+        <div class="container">
+            <div class="discovery-content" data-aos="fade-up">
+                <div class="section-subtitle">Personalized Experience</div>
+                <h2 class="section-title">Discover Your Signature Scent</h2>
+                <p class="section-description">
+                    Let our fragrance experts guide you to your perfect match through our curated collection.
+                </p>
+                
+                <div class="discovery-grid">
+                    <div class="discovery-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="discovery-icon">
+                            <i class="fas fa-palette"></i>
+                        </div>
+                        <h3>Scent Profiles</h3>
+                        <p>Explore our carefully crafted fragrance families from fresh citrus to deep oriental notes.</p>
+                        <a href="shop.html" class="discovery-link">Browse Collection <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                    
+                    <div class="discovery-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="discovery-icon">
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h3>Best Sellers</h3>
+                        <p>Discover the fragrances that have captured hearts and become signature scents worldwide.</p>
+                        <a href="shop.html?sort=popular" class="discovery-link">View Popular <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                    
+                    <div class="discovery-card" data-aos="fade-up" data-aos-delay="300">
+                        <div class="discovery-icon">
+                            <i class="fas fa-gift"></i>
+                        </div>
+                        <h3>Sample Sets</h3>
+                        <p>Try before you commit with our curated sample collections and discovery sets.</p>
+                        <a href="contact.html" class="discovery-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -379,35 +234,35 @@
     <!-- Experience Section -->
     <section class="experience" id="experience">
         <div class="experience-background">
-            <img src="https://i.pinimg.com/1200x/af/3c/b5/af3cb50cec2b80f41ac063b5b33f651e.jpg" alt="Perfume Laboratory" loading="lazy">
+            <img src="https://images.unsplash.com/photo-1556228578-8c89e6adf883?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80" alt="Perfume Experience">
             <div class="experience-overlay"></div>
         </div>
         
         <div class="container">
             <div class="experience-content">
                 <div class="experience-text" data-aos="fade-right">
-                    <div class="section-subtitle">The Art of Perfumery</div>
-                    <h2 class="section-title">Crafted with Passion</h2>
+                    <div class="section-subtitle">Our Craft</div>
+                    <h2 class="section-title">The Art of Perfumery</h2>
                     <p class="experience-description">
-                        Every fragrance in our collection is born from a meticulous process that combines traditional craftsmanship with modern innovation. Our master perfumers spend months perfecting each blend, ensuring that every note harmonizes to create an unforgettable olfactory experience.
+                        Every fragrance tells a story. Our master perfumers blend the finest ingredients from around the world, creating scents that capture emotions, memories, and dreams in every bottle.
                     </p>
                     
                     <div class="experience-stats">
                         <div class="stat-item">
-                            <div class="stat-number" data-count="50">0</div>
-                            <div class="stat-label">Years of Excellence</div>
+                            <span class="stat-number" data-count="50">0</span>
+                            <span class="stat-label">Unique Fragrances</span>
                         </div>
                         <div class="stat-item">
-                            <div class="stat-number" data-count="200">0</div>
-                            <div class="stat-label">Unique Fragrances</div>
+                            <span class="stat-number" data-count="25">0</span>
+                            <span class="stat-label">Years Experience</span>
                         </div>
                         <div class="stat-item">
-                            <div class="stat-number" data-count="1000000">0</div>
-                            <div class="stat-label">Happy Customers</div>
+                            <span class="stat-number" data-count="10000">0</span>
+                            <span class="stat-label">Happy Customers</span>
                         </div>
                     </div>
                     
-                    <button class="btn btn-primary">Discover Our Story</button>
+                    <a href="about.html" class="btn btn-primary">Learn Our Story</a>
                 </div>
                 
                 <div class="experience-features" data-aos="fade-left">
@@ -416,7 +271,7 @@
                             <i class="fas fa-leaf"></i>
                         </div>
                         <h4>Natural Ingredients</h4>
-                        <p>Sourced from the finest botanical gardens around the world</p>
+                        <p>Sourced from the finest gardens and distilleries worldwide</p>
                     </div>
                     
                     <div class="feature-card">
@@ -424,154 +279,15 @@
                             <i class="fas fa-flask"></i>
                         </div>
                         <h4>Expert Craftsmanship</h4>
-                        <p>Created by master perfumers with decades of experience</p>
+                        <p>Handcrafted by master perfumers with decades of experience</p>
                     </div>
                     
                     <div class="feature-card">
                         <div class="feature-icon">
-                            <i class="fas fa-gem"></i>
+                            <i class="fas fa-certificate"></i>
                         </div>
-                        <h4>Luxury Packaging</h4>
-                        <p>Elegant bottles designed to complement your vanity</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Fragrance Finder Quiz -->
-    <section class="fragrance-finder" id="fragranceFinder">
-        <div class="container">
-            <div class="section-header">
-                <div class="section-subtitle">Personalized Experience</div>
-                <h2 class="section-title">Find Your Perfect Scent</h2>
-                <p class="section-description">
-                    Answer a few questions and let our AI-powered fragrance finder recommend the perfect scent that matches your personality and preferences.
-                </p>
-            </div>
-            
-            <div class="quiz-container">
-                <div class="quiz-progress">
-                    <div class="progress-bar">
-                        <div class="progress-fill" id="progressFill"></div>
-                    </div>
-                    <span class="progress-text">Question <span id="currentQuestion">1</span> of <span id="totalQuestions">6</span></span>
-                </div>
-                
-                <div class="quiz-content" id="quizContent">
-                    <div class="quiz-question active" data-question="1">
-                        <h3 class="question-title">What's your ideal time of day?</h3>
-                        <div class="question-options">
-                            <button class="option-btn" data-value="morning" data-weight="fresh">
-                                <div class="option-icon">🌅</div>
-                                <div class="option-text">
-                                    <h4>Early Morning</h4>
-                                    <p>Fresh start, energetic vibes</p>
-                                </div>
-                            </button>
-                            <button class="option-btn" data-value="afternoon" data-weight="bright">
-                                <div class="option-icon">☀️</div>
-                                <div class="option-text">
-                                    <h4>Bright Afternoon</h4>
-                                    <p>Warm, confident, social</p>
-                                </div>
-                            </button>
-                            <button class="option-btn" data-value="evening" data-weight="elegant">
-                                <div class="option-icon">🌆</div>
-                                <div class="option-text">
-                                    <h4>Golden Evening</h4>
-                                    <p>Sophisticated, romantic</p>
-                                </div>
-                            </button>
-                            <button class="option-btn" data-value="night" data-weight="mysterious">
-                                <div class="option-icon">🌙</div>
-                                <div class="option-text">
-                                    <h4>Deep Night</h4>
-                                    <p>Mysterious, intense, bold</p>
-                                </div>
-                            </button>
-                        </div>
-                    </div>
-                    
-                    <div class="quiz-question" data-question="2">
-                        <h3 class="question-title">Which environment resonates with you?</h3>
-                        <div class="question-options">
-                            <button class="option-btn" data-value="garden" data-weight="floral">
-                                <div class="option-icon">🌸</div>
-                                <div class="option-text">
-                                    <h4>Blooming Garden</h4>
-                                    <p>Floral, natural, peaceful</p>
-                                </div>
-                            </button>
-                            <button class="option-btn" data-value="ocean" data-weight="fresh">
-                                <div class="option-icon">🌊</div>
-                                <div class="option-text">
-                                    <h4>Ocean Shore</h4>
-                                    <p>Fresh, clean, invigorating</p>
-                                </div>
-                            </button>
-                            <button class="option-btn" data-value="forest" data-weight="woody">
-                                <div class="option-icon">🌲</div>
-                                <div class="option-text">
-                                    <h4>Mystical Forest</h4>
-                                    <p>Earthy, grounding, natural</p>
-                                </div>
-                            </button>
-                            <button class="option-btn" data-value="city" data-weight="modern">
-                                <div class="option-icon">🏙️</div>
-                                <div class="option-text">
-                                    <h4>Urban Skyline</h4>
-                                    <p>Modern, dynamic, bold</p>
-                                </div>
-                            </button>
-                        </div>
-                    </div>
-                    
-                    <div class="quiz-question" data-question="3">
-                        <h3 class="question-title">Your ideal evening activity?</h3>
-                        <div class="question-options">
-                            <button class="option-btn" data-value="romantic" data-weight="romantic">
-                                <div class="option-icon">💕</div>
-                                <div class="option-text">
-                                    <h4>Romantic Dinner</h4>
-                                    <p>Intimate, warm, sensual</p>
-                                </div>
-                            </button>
-                            <button class="option-btn" data-value="adventure" data-weight="bold">
-                                <div class="option-icon">🎭</div>
-                                <div class="option-text">
-                                    <h4>Night Adventure</h4>
-                                    <p>Exciting, bold, memorable</p>
-                                </div>
-                            </button>
-                            <button class="option-btn" data-value="cozy" data-weight="comfort">
-                                <div class="option-icon">🕯️</div>
-                                <div class="option-text">
-                                    <h4>Cozy at Home</h4>
-                                    <p>Comfortable, relaxing, warm</p>
-                                </div>
-                            </button>
-                            <button class="option-btn" data-value="social" data-weight="vibrant">
-                                <div class="option-icon">🥂</div>
-                                <div class="option-text">
-                                    <h4>Social Gathering</h4>
-                                    <p>Vibrant, confident, social</p>
-                                </div>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="quiz-result" id="quizResult" style="display: none;">
-                    <div class="result-animation">
-                        <div class="result-sparkles"></div>
-                    </div>
-                    <h3 class="result-title" id="resultTitle"></h3>
-                    <p class="result-description" id="resultDescription"></p>
-                    <div class="recommended-product" id="recommendedProduct"></div>
-                    <div class="result-actions">
-                        <button class="btn btn-primary" id="shopRecommendation">Shop Your Match</button>
-                        <button class="btn btn-outline" id="retakeQuiz">Retake Quiz</button>
+                        <h4>Quality Guarantee</h4>
+                        <p>Every bottle meets our highest standards of excellence</p>
                     </div>
                 </div>
             </div>
@@ -579,14 +295,14 @@
     </section>
 
     <!-- Testimonials -->
-    <section class="testimonials">
+    <section class="testimonials" id="testimonials">
         <div class="container">
-            <div class="section-header">
-                <div class="section-subtitle">Customer Stories</div>
-                <h2 class="section-title">What Our Customers Say</h2>
+            <div class="section-header" data-aos="fade-up">
+                <div class="section-subtitle">What Our Customers Say</div>
+                <h2 class="section-title">Testimonials</h2>
             </div>
             
-            <div class="testimonials-slider" id="testimonialsSlider">
+            <div class="testimonials-slider">
                 <div class="testimonial-card active">
                     <div class="testimonial-content">
                         <div class="testimonial-rating">
@@ -597,10 +313,10 @@
                             <i class="fas fa-star"></i>
                         </div>
                         <p class="testimonial-text">
-                            "Midnight Elegance has become my signature scent. The complexity and longevity are unmatched. I receive compliments everywhere I go!"
+                            "Midnight Elegance has become my signature scent. The quality is exceptional and the fragrance lasts all day. I receive compliments everywhere I go!"
                         </p>
                         <div class="testimonial-author">
-                            <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=150&q=80" alt="Sarah Johnson" class="author-image">
+                            <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="Sarah Johnson" class="author-image">
                             <div class="author-info">
                                 <h4 class="author-name">Sarah Johnson</h4>
                                 <p class="author-title">Fashion Designer</p>
@@ -619,10 +335,10 @@
                             <i class="fas fa-star"></i>
                         </div>
                         <p class="testimonial-text">
-                            "The quality and craftsmanship of these fragrances are exceptional. Ocean Breeze transports me to a tropical paradise every time."
+                            "The fragrance finder quiz was amazing! It recommended Golden Dawn, which is now my absolute favorite. Perfect for my morning routine."
                         </p>
                         <div class="testimonial-author">
-                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=150&q=80" alt="Michael Chen" class="author-image">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="Michael Chen" class="author-image">
                             <div class="author-info">
                                 <h4 class="author-name">Michael Chen</h4>
                                 <p class="author-title">Business Executive</p>
@@ -641,13 +357,13 @@
                             <i class="fas fa-star"></i>
                         </div>
                         <p class="testimonial-text">
-                            "Rose Noir is absolutely divine! The packaging is luxurious and the scent is sophisticated yet approachable. Highly recommend!"
+                            "Outstanding customer service and beautiful packaging. Ocean Breeze is fresh and invigorating - perfect for summer days!"
                         </p>
                         <div class="testimonial-author">
-                            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=150&q=80" alt="Emma Rodriguez" class="author-image">
+                            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="Emma Wilson" class="author-image">
                             <div class="author-info">
-                                <h4 class="author-name">Emma Rodriguez</h4>
-                                <p class="author-title">Art Director</p>
+                                <h4 class="author-name">Emma Wilson</h4>
+                                <p class="author-title">Marketing Director</p>
                             </div>
                         </div>
                     </div>
@@ -655,11 +371,13 @@
             </div>
             
             <div class="testimonials-controls">
-                <button class="testimonial-btn prev" id="testimonialPrev">
+                <button class="testimonial-btn" id="testimonialPrev">
                     <i class="fas fa-chevron-left"></i>
                 </button>
-                <div class="testimonials-dots" id="testimonialsDots"></div>
-                <button class="testimonial-btn next" id="testimonialNext">
+                <div class="testimonials-dots" id="testimonialsDots">
+                    <!-- Dots will be generated by JavaScript -->
+                </div>
+                <button class="testimonial-btn" id="testimonialNext">
                     <i class="fas fa-chevron-right"></i>
                 </button>
             </div>
@@ -669,22 +387,20 @@
     <!-- Newsletter -->
     <section class="newsletter">
         <div class="newsletter-background">
-            <img src="https://i.pinimg.com/736x/a6/ad/6c/a6ad6ca048a1b51e1efbf77e162cbb31.jpg" alt="Newsletter Background" loading="lazy">
+            <img src="https://images.unsplash.com/photo-1563170351-be82bc888aa4?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80" alt="Newsletter">
             <div class="newsletter-overlay"></div>
         </div>
         
         <div class="container">
-            <div class="newsletter-content">
-                <div class="newsletter-text" data-aos="fade-up">
-                    <h2 class="newsletter-title">Stay in the Scent</h2>
-                    <p class="newsletter-subtitle">
-                        Be the first to discover new fragrances, exclusive collections, and special offers. Join our community of fragrance enthusiasts.
-                    </p>
-                </div>
+            <div class="newsletter-content" data-aos="fade-up">
+                <h2 class="newsletter-title">Stay in the Loop</h2>
+                <p class="newsletter-subtitle">
+                    Be the first to know about new fragrances, exclusive offers, and perfumery insights.
+                </p>
                 
-                <form class="newsletter-form" id="newsletterForm" data-aos="fade-up" data-aos-delay="200">
+                <form class="newsletter-form" id="newsletterForm">
                     <div class="form-group">
-                        <input type="email" placeholder="Enter your email address" class="newsletter-input" required>
+                        <input type="email" class="newsletter-input" placeholder="Enter your email address" required>
                         <button type="submit" class="newsletter-btn">
                             <span>Subscribe</span>
                             <i class="fas fa-arrow-right"></i>
@@ -695,7 +411,7 @@
                     </p>
                 </form>
                 
-                <div class="newsletter-benefits" data-aos="fade-up" data-aos-delay="400">
+                <div class="newsletter-benefits">
                     <div class="benefit-item">
                         <i class="fas fa-gift"></i>
                         <span>Exclusive Offers</span>
@@ -705,8 +421,8 @@
                         <span>New Arrivals</span>
                     </div>
                     <div class="benefit-item">
-                        <i class="fas fa-star"></i>
-                        <span>VIP Access</span>
+                        <i class="fas fa-lightbulb"></i>
+                        <span>Fragrance Tips</span>
                     </div>
                 </div>
             </div>
@@ -719,7 +435,7 @@
             <div class="footer-content">
                 <div class="footer-section brand-section">
                     <div class="footer-brand">
-                        <a href="#" class="brand-logo">
+                        <a href="index.html" class="brand-logo">
                             <i class="fas fa-gem"></i>
                             <span>AMAZING AURA</span>
                         </a>
@@ -728,71 +444,57 @@
                         Crafting amazing aura fragrances that define your unique essence. Experience the art of perfumery with our premium collection of scents.
                     </p>
                     <div class="social-links">
-                        <a href="#" class="social-link" aria-label="Facebook">
-                            <i class="fab fa-facebook-f"></i>
-                        </a>
-                        <a href="#" class="social-link" aria-label="Instagram">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                        <a href="#" class="social-link" aria-label="Twitter">
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                        <a href="#" class="social-link" aria-label="Pinterest">
-                            <i class="fab fa-pinterest"></i>
-                        </a>
-                        <a href="#" class="social-link" aria-label="YouTube">
-                            <i class="fab fa-youtube"></i>
-                        </a>
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-pinterest"></i></a>
                     </div>
                 </div>
                 
                 <div class="footer-section">
                     <h4 class="footer-title">Collections</h4>
                     <ul class="footer-links">
-                        <li><a href="#">Signature Series</a></li>
-                        <li><a href="#">Limited Edition</a></li>
-                        <li><a href="#">Classic Collection</a></li>
-                        <li><a href="#">Seasonal Scents</a></li>
-                        <li><a href="#">Gift Sets</a></li>
+                        <li><a href="shop.html?filter=signature">Signature Series</a></li>
+                        <li><a href="shop.html?filter=limited">Limited Edition</a></li>
+                        <li><a href="shop.html?filter=classic">Classic Collection</a></li>
+                        <li><a href="shop.html?filter=fresh">Fresh Collection</a></li>
                     </ul>
                 </div>
                 
                 <div class="footer-section">
                     <h4 class="footer-title">Customer Care</h4>
                     <ul class="footer-links">
-                        <li><a href="#">Contact Us</a></li>
-                        <li><a href="#">Shipping Info</a></li>
-                        <li><a href="#">Returns & Exchanges</a></li>
-                        <li><a href="#">Size Guide</a></li>
-                        <li><a href="#">FAQ</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="#shipping">Shipping Info</a></li>
+                        <li><a href="#returns">Returns</a></li>
+                        <li><a href="#faq">FAQ</a></li>
                     </ul>
                 </div>
                 
                 <div class="footer-section">
-                    <h4 class="footer-title">About</h4>
+                    <h4 class="footer-title">Company</h4>
                     <ul class="footer-links">
-                        <li><a href="#">Our Story</a></li>
-                        <li><a href="#">Craftsmanship</a></li>
-                        <li><a href="#">Sustainability</a></li>
-                        <li><a href="#">Press</a></li>
-                        <li><a href="#">Careers</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="#careers">Careers</a></li>
+                        <li><a href="#press">Press</a></li>
+                        <li><a href="#sustainability">Sustainability</a></li>
                     </ul>
                 </div>
                 
                 <div class="footer-section contact-section">
-                    <h4 class="footer-title">Get in Touch</h4>
+                    <h4 class="footer-title">Contact</h4>
                     <div class="contact-info">
                         <div class="contact-item">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <span>123 Luxury Avenue<br>New York, NY 10001</span>
-                        </div>
-                        <div class="contact-item">
                             <i class="fas fa-phone"></i>
-                            <span>+1 (555) 123-4567</span>
+                            <span>+234 706 804 5006</span>
                         </div>
                         <div class="contact-item">
                             <i class="fas fa-envelope"></i>
-                            <span>hello@amazingaura.com</span>
+                            <span>amazingperfume.ng@gmail.com</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Lagos, Nigeria</span>
                         </div>
                     </div>
                 </div>
@@ -800,18 +502,44 @@
             
             <div class="footer-bottom">
                 <div class="footer-bottom-content">
-                    <p class="copyright">
-                        &copy; 2024 Amazing Aura Perfumes. All rights reserved.
-                    </p>
+                    <p class="copyright">&copy; 2024 Amazing Aura Perfumes. All rights reserved.</p>
                     <div class="footer-legal">
-                        <a href="#">Privacy Policy</a>
-                        <a href="#">Terms of Service</a>
-                        <a href="#">Cookie Policy</a>
+                        <a href="#privacy">Privacy Policy</a>
+                        <a href="#terms">Terms of Service</a>
+                        <a href="#cookies">Cookie Policy</a>
                     </div>
                 </div>
             </div>
         </div>
     </footer>
+
+    <!-- Mobile Bottom Navigation -->
+    <nav class="mobile-bottom-nav">
+        <div class="mobile-nav-container">
+            <a href="index.html" class="mobile-nav-item active">
+                <i class="fas fa-home"></i>
+                <span>Home</span>
+            </a>
+            <a href="shop.html" class="mobile-nav-item">
+                <i class="fas fa-th-large"></i>
+                <span>Shop</span>
+            </a>
+            <a href="wishlist.html" class="mobile-nav-item">
+                <i class="fas fa-heart"></i>
+                <span>Wishlist</span>
+                <span class="wishlist-count">0</span>
+            </a>
+            <a href="cart.html" class="mobile-nav-item">
+                <i class="fas fa-shopping-bag"></i>
+                <span>Cart</span>
+                <span class="cart-count">0</span>
+            </a>
+            <a href="contact.html" class="mobile-nav-item">
+                <i class="fas fa-phone"></i>
+                <span>Contact</span>
+            </a>
+        </div>
+    </nav>
 
     <!-- Quick View Modal -->
     <div class="modal" id="quickViewModal">
@@ -821,30 +549,15 @@
                 <i class="fas fa-times"></i>
             </button>
             <div class="modal-body" id="modalBody">
-                <!-- Dynamic content will be loaded here -->
-            </div>
-        </div>
-    </div>
-
-    <!-- Cart Sidebar -->
-    <div class="cart-sidebar" id="cartSidebar">
-        <div class="cart-header">
-            <h3>Shopping Cart</h3>
-            <button class="cart-close" id="cartClose">
-                <i class="fas fa-times"></i>
-            </button>
-        </div>
-        <div class="cart-content" id="cartContent">
-            <div class="empty-cart">
-                <i class="fas fa-shopping-bag"></i>
-                <p>Your cart is empty</p>
-                <button class="btn btn-primary">Start Shopping</button>
+                <!-- Quick view content will be loaded here -->
             </div>
         </div>
     </div>
 
     <!-- Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="assets/js/database.js"></script>
+    <script src="assets/js/cart.js"></script>
     <script src="assets/js/main.js"></script>
 </body>
 </html>

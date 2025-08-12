@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - Amazing Aura Perfumes</title>
+    <meta name="description" content="Complete your luxury fragrance purchase with secure checkout.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/checkout.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <a href="index.html" class="brand-logo">
+                    <i class="fas fa-gem"></i>
+                    <span>AMAZING AURA</span>
+                </a>
+            </div>
+            
+            <div class="checkout-progress">
+                <div class="progress-step active">
+                    <div class="step-number">1</div>
+                    <span>Checkout</span>
+                </div>
+                <div class="progress-line"></div>
+                <div class="progress-step">
+                    <div class="step-number">2</div>
+                    <span>Payment</span>
+                </div>
+                <div class="progress-line"></div>
+                <div class="progress-step">
+                    <div class="step-number">3</div>
+                    <span>Complete</span>
+                </div>
+            </div>
+            
+            <div class="nav-actions">
+                <a href="cart.html" class="cart-btn" id="cartBtn">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span class="cart-count">0</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Checkout Page -->
+    <section class="checkout-page">
+        <div class="container">
+            <div class="checkout-layout">
+                <!-- Checkout Form -->
+                <div class="checkout-form-section">
+                    <div class="form-header">
+                        <h1>Secure Checkout</h1>
+                        <p>Complete your order with confidence</p>
+                    </div>
+
+                    <form class="checkout-form" id="checkoutForm">
+                        <!-- Contact Information -->
+                        <div class="form-section">
+                            <h2 class="section-title">
+                                <i class="fas fa-user"></i>
+                                Contact Information
+                            </h2>
+                            
+                            <div class="form-grid">
+                                <div class="form-group">
+                                    <label for="email">Email Address *</label>
+                                    <input type="email" id="email" name="email" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="phone">Phone Number</label>
+                                    <input type="tel" id="phone" name="phone">
+                                </div>
+                            </div>
+                            
+                            <div class="form-options">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="newsletter">
+                                    <span class="checkmark"></span>
+                                    Subscribe to our newsletter for exclusive offers
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Shipping Address -->
+                        <div class="form-section">
+                            <h2 class="section-title">
+                                <i class="fas fa-truck"></i>
+                                Shipping Address
+                            </h2>
+                            
+                            <div class="form-grid">
+                                <div class="form-group">
+                                    <label for="firstName">First Name *</label>
+                                    <input type="text" id="firstName" name="firstName" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="lastName">Last Name *</label>
+                                    <input type="text" id="lastName" name="lastName" required>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="address">Street Address *</label>
+                                <input type="text" id="address" name="address" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="apartment">Apartment, suite, etc. (optional)</label>
+                                <input type="text" id="apartment" name="apartment">
+                            </div>
+                            
+                            <div class="form-grid">
+                                <div class="form-group">
+                                    <label for="city">City *</label>
+                                    <input type="text" id="city" name="city" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="state">State *</label>
+                                    <select id="state" name="state" required>
+                                        <option value="">Select State</option>
+                                        <option value="AL">Alabama</option>
+                                        <option value="AK">Alaska</option>
+                                        <option value="AZ">Arizona</option>
+                                        <option value="AR">Arkansas</option>
+                                        <option value="CA">California</option>
+                                        <option value="CO">Colorado</option>
+                                        <option value="CT">Connecticut</option>
+                                        <option value="DE">Delaware</option>
+                                        <option value="FL">Florida</option>
+                                        <option value="GA">Georgia</option>
+                                        <option value="HI">Hawaii</option>
+                                        <option value="ID">Idaho</option>
+                                        <option value="IL">Illinois</option>
+                                        <option value="IN">Indiana</option>
+                                        <option value="IA">Iowa</option>
+                                        <option value="KS">Kansas</option>
+                                        <option value="KY">Kentucky</option>
+                                        <option value="LA">Louisiana</option>
+                                        <option value="ME">Maine</option>
+                                        <option value="MD">Maryland</option>
+                                        <option value="MA">Massachusetts</option>
+                                        <option value="MI">Michigan</option>
+                                        <option value="MN">Minnesota</option>
+                                        <option value="MS">Mississippi</option>
+                                        <option value="MO">Missouri</option>
+                                        <option value="MT">Montana</option>
+                                        <option value="NE">Nebraska</option>
+                                        <option value="NV">Nevada</option>
+                                        <option value="NH">New Hampshire</option>
+                                        <option value="NJ">New Jersey</option>
+                                        <option value="NM">New Mexico</option>
+                                        <option value="NY">New York</option>
+                                        <option value="NC">North Carolina</option>
+                                        <option value="ND">North Dakota</option>
+                                        <option value="OH">Ohio</option>
+                                        <option value="OK">Oklahoma</option>
+                                        <option value="OR">Oregon</option>
+                                        <option value="PA">Pennsylvania</option>
+                                        <option value="RI">Rhode Island</option>
+                                        <option value="SC">South Carolina</option>
+                                        <option value="SD">South Dakota</option>
+                                        <option value="TN">Tennessee</option>
+                                        <option value="TX">Texas</option>
+                                        <option value="UT">Utah</option>
+                                        <option value="VT">Vermont</option>
+                                        <option value="VA">Virginia</option>
+                                        <option value="WA">Washington</option>
+                                        <option value="WV">West Virginia</option>
+                                        <option value="WI">Wisconsin</option>
+                                        <option value="WY">Wyoming</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="zipCode">ZIP Code *</label>
+                                    <input type="text" id="zipCode" name="zipCode" required>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Shipping Method -->
+                        <div class="form-section">
+                            <h2 class="section-title">
+                                <i class="fas fa-shipping-fast"></i>
+                                Shipping Method
+                            </h2>
+                            
+                            <div class="shipping-options">
+                                <label class="shipping-option">
+                                    <input type="radio" name="shipping" value="standard" checked>
+                                    <div class="option-content">
+                                        <div class="option-header">
+                                            <span class="option-name">Standard Shipping</span>
+                                            <span class="option-price">FREE</span>
+                                        </div>
+                                        <p class="option-description">5-7 business days</p>
+                                    </div>
+                                </label>
+                                
+                                <label class="shipping-option">
+                                    <input type="radio" name="shipping" value="express">
+                                    <div class="option-content">
+                                        <div class="option-header">
+                                            <span class="option-name">Express Shipping</span>
+                                            <span class="option-price">$9.99</span>
+                                        </div>
+                                        <p class="option-description">2-3 business days</p>
+                                    </div>
+                                </label>
+                                
+                                <label class="shipping-option">
+                                    <input type="radio" name="shipping" value="overnight">
+                                    <div class="option-content">
+                                        <div class="option-header">
+                                            <span class="option-name">Overnight Shipping</span>
+                                            <span class="option-price">$24.99</span>
+                                        </div>
+                                        <p class="option-description">Next business day</p>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Payment Method -->
+                        <div class="form-section">
+                            <h2 class="section-title">
+                                <i class="fas fa-credit-card"></i>
+                                Payment Information
+                            </h2>
+                            
+                            <div class="payment-methods">
+                                <label class="payment-method active">
+                                    <input type="radio" name="payment" value="card" checked>
+                                    <div class="method-content">
+                                        <i class="fas fa-credit-card"></i>
+                                        <span>Credit Card</span>
+                                    </div>
+                                </label>
+                                
+                                <label class="payment-method">
+                                    <input type="radio" name="payment" value="paypal">
+                                    <div class="method-content">
+                                        <i class="fab fa-paypal"></i>
+                                        <span>PayPal</span>
+                                    </div>
+                                </label>
+                                
+                                <label class="payment-method">
+                                    <input type="radio" name="payment" value="apple">
+                                    <div class="method-content">
+                                        <i class="fab fa-apple-pay"></i>
+                                        <span>Apple Pay</span>
+                                    </div>
+                                </label>
+                            </div>
+                            
+                            <div class="payment-form" id="cardPaymentForm">
+                                <div class="form-group">
+                                    <label for="cardNumber">Card Number *</label>
+                                    <input type="text" id="cardNumber" name="cardNumber" placeholder="1234 5678 9012 3456" required>
+                                </div>
+                                
+                                <div class="form-grid">
+                                    <div class="form-group">
+                                        <label for="expiryDate">Expiry Date *</label>
+                                        <input type="text" id="expiryDate" name="expiryDate" placeholder="MM/YY" required>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label for="cvv">CVV *</label>
+                                        <input type="text" id="cvv" name="cvv" placeholder="123" required>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="cardName">Name on Card *</label>
+                                    <input type="text" id="cardName" name="cardName" required>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Form Actions -->
+                        <div class="form-actions">
+                            <a href="cart.html" class="btn btn-outline">
+                                <i class="fas fa-arrow-left"></i>
+                                <span>Back to Cart</span>
+                            </a>
+                            <button type="submit" class="btn btn-primary">
+                                <i class="fas fa-lock"></i>
+                                <span>Complete Order</span>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Order Summary -->
+                <div class="order-summary-section">
+                    <div class="order-summary">
+                        <h2>Order Summary</h2>
+                        
+                        <div class="order-items" id="orderItems">
+                            <!-- Order items will be loaded here -->
+                        </div>
+                        
+                        <div class="promo-section">
+                            <div class="promo-input-group">
+                                <input type="text" placeholder="Discount code" class="promo-input">
+                                <button class="promo-apply">Apply</button>
+                            </div>
+                        </div>
+                        
+                        <div class="order-totals" id="orderTotals">
+                            <!-- Order totals will be loaded here -->
+                        </div>
+                        
+                        <div class="security-info">
+                            <div class="security-item">
+                                <i class="fas fa-shield-alt"></i>
+                                <span>256-bit SSL encryption</span>
+                            </div>
+                            <div class="security-item">
+                                <i class="fas fa-lock"></i>
+                                <span>Secure payment processing</span>
+                            </div>
+                            <div class="security-item">
+                                <i class="fas fa-undo"></i>
+                                <span>30-day money-back guarantee</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Success Modal -->
+    <div class="modal" id="successModal">
+        <div class="modal-overlay"></div>
+        <div class="modal-content">
+            <div class="success-content">
+                <div class="success-icon">
+                    <i class="fas fa-check-circle"></i>
+                </div>
+                <h2>Order Confirmed!</h2>
+                <p>Thank you for your purchase. Your order has been successfully placed.</p>
+                <div class="order-details">
+                    <p><strong>Order Number:</strong> <span id="orderNumber">#AA-2024-001</span></p>
+                    <p><strong>Estimated Delivery:</strong> <span id="deliveryDate">5-7 business days</span></p>
+                </div>
+                <div class="success-actions">
+                    <button class="btn btn-primary" onclick="window.location.href='index.html'">Continue Shopping</button>
+                    <button class="btn btn-outline" onclick="window.print()">Print Receipt</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="assets/js/database.js"></script>
+    <script src="assets/js/cart.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script>
+        // Checkout Page Manager
+        class CheckoutManager {
+            constructor() {
+                this.cart = [];
+                this.shippingCost = 0;
+                this.init();
+            }
+
+            init() {
+                this.loadCartItems();
+                this.bindEvents();
+                this.updateOrderSummary();
+            }
+
+            bindEvents() {
+                // Form submission
+                document.getElementById('checkoutForm').addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    this.processOrder();
+                });
+
+                // Payment method selection
+                document.querySelectorAll('input[name="payment"]').forEach(input => {
+                    input.addEventListener('change', (e) => {
+                        this.updatePaymentForm(e.target.value);
+                    });
+                });
+
+                // Shipping method selection
+                document.querySelectorAll('input[name="shipping"]').forEach(input => {
+                    input.addEventListener('change', (e) => {
+                        this.updateShippingCost(e.target.value);
+                    });
+                });
+
+                // Card number formatting
+                const cardNumberInput = document.getElementById('cardNumber');
+                if (cardNumberInput) {
+                    cardNumberInput.addEventListener('input', (e) => {
+                        let value = e.target.value.replace(/\s/g, '').replace(/[^0-9]/gi, '');
+                        let formattedValue = value.match(/.{1,4}/g)?.join(' ') || value;
+                        e.target.value = formattedValue;
+                    });
+                }
+
+                // Expiry date formatting
+                const expiryInput = document.getElementById('expiryDate');
+                if (expiryInput) {
+                    expiryInput.addEventListener('input', (e) => {
+                        let value = e.target.value.replace(/\D/g, '');
+                        if (value.length >= 2) {
+                            value = value.substring(0, 2) + '/' + value.substring(2, 4);
+                        }
+                        e.target.value = value;
+                    });
+                }
+            }
+
+            loadCartItems() {
+                this.cart = JSON.parse(localStorage.getItem('amazingaura_cart') || '[]');
+                
+                if (this.cart.length === 0) {
+                    window.location.href = 'cart.html';
+                    return;
+                }
+
+                this.displayOrderItems();
+                this.updateCartCount();
+            }
+
+            displayOrderItems() {
+                const orderItems = document.getElementById('orderItems');
+                
+                orderItems.innerHTML = this.cart.map(item => `
+                    <div class="order-item">
+                        <div class="item-image">
+                            <img src="${item.image}" alt="${item.name}">
+                            <span class="item-quantity">${item.quantity}</span>
+                        </div>
+                        <div class="item-details">
+                            <h4>${item.name}</h4>
+                            <p>${item.size}</p>
+                        </div>
+                        <div class="item-price">
+                            $${(item.price * item.quantity).toFixed(2)}
+                        </div>
+                    </div>
+                `).join('');
+            }
+
+            updateOrderSummary() {
+                const subtotal = this.cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+                const tax = subtotal * 0.08;
+                const total = subtotal + this.shippingCost + tax;
+
+                const orderTotals = document.getElementById('orderTotals');
+                orderTotals.innerHTML = `
+                    <div class="total-line">
+                        <span>Subtotal</span>
+                        <span>$${subtotal.toFixed(2)}</span>
+                    </div>
+                    <div class="total-line">
+                        <span>Shipping</span>
+                        <span>${this.shippingCost === 0 ? 'FREE' : '$' + this.shippingCost.toFixed(2)}</span>
+                    </div>
+                    <div class="total-line">
+                        <span>Tax</span>
+                        <span>$${tax.toFixed(2)}</span>
+                    </div>
+                    <div class="total-line final-total">
+                        <span><strong>Total</strong></span>
+                        <span><strong>$${total.toFixed(2)}</strong></span>
+                    </div>
+                `;
+            }
+
+            updatePaymentForm(method) {
+                document.querySelectorAll('.payment-method').forEach(pm => {
+                    pm.classList.remove('active');
+                });
+                
+                document.querySelector(`input[value="${method}"]`).closest('.payment-method').classList.add('active');
+                
+                const cardForm = document.getElementById('cardPaymentForm');
+                if (method === 'card') {
+                    cardForm.style.display = 'block';
+                } else {
+                    cardForm.style.display = 'none';
+                }
+            }
+
+            updateShippingCost(method) {
+                switch (method) {
+                    case 'standard':
+                        this.shippingCost = 0;
+                        break;
+                    case 'express':
+                        this.shippingCost = 9.99;
+                        break;
+                    case 'overnight':
+                        this.shippingCost = 24.99;
+                        break;
+                }
+                this.updateOrderSummary();
+            }
+
+            updateCartCount() {
+                const cartCount = document.querySelector('.cart-count');
+                if (cartCount) {
+                    const totalItems = this.cart.reduce((sum, item) => sum + item.quantity, 0);
+                    cartCount.textContent = totalItems;
+                    cartCount.style.display = totalItems > 0 ? 'block' : 'none';
+                }
+            }
+
+            processOrder() {
+                // Show loading state
+                const submitBtn = document.querySelector('button[type="submit"]');
+                const originalText = submitBtn.innerHTML;
+                submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> <span>Processing...</span>';
+                submitBtn.disabled = true;
+
+                // Simulate order processing
+                setTimeout(() => {
+                    this.completeOrder();
+                }, 2000);
+            }
+
+            completeOrder() {
+                // Generate order number
+                const orderNumber = '#AA-' + new Date().getFullYear() + '-' + String(Math.floor(Math.random() * 10000)).padStart(3, '0');
+                document.getElementById('orderNumber').textContent = orderNumber;
+
+                // Calculate delivery date
+                const deliveryDate = new Date();
+                deliveryDate.setDate(deliveryDate.getDate() + 7);
+                document.getElementById('deliveryDate').textContent = deliveryDate.toLocaleDateString('en-US', {
+                    weekday: 'long',
+                    year: 'numeric',
+                    month: 'long',
+                    day: 'numeric'
+                });
+
+                // Clear cart
+                localStorage.removeItem('amazingaura_cart');
+
+                // Show success modal
+                document.getElementById('successModal').classList.add('active');
+            }
+        }
+
+        // Initialize checkout
+        document.addEventListener('DOMContentLoaded', () => {
+            new CheckoutManager();
+        });
+    </script>
+</body>
+</html>

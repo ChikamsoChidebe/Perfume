@@ -34,14 +34,8 @@
                     <li class="nav-item">
                         <a href="index.html" class="nav-link">Home</a>
                     </li>
-                    <li class="nav-item dropdown">
-                        <a href="shop.html" class="nav-link">Collections <i class="fas fa-chevron-down"></i></a>
-                        <div class="dropdown-menu">
-                            <a href="shop.html?filter=signature" class="dropdown-item">Signature Series</a>
-                            <a href="shop.html?filter=limited" class="dropdown-item">Limited Edition</a>
-                            <a href="shop.html?filter=classic" class="dropdown-item">Classic Collection</a>
-                            <a href="shop.html?filter=seasonal" class="dropdown-item">Seasonal Scents</a>
-                        </div>
+                    <li class="nav-item">
+                        <a href="shop.html" class="nav-link">Collections</a>
                     </li>
                     <li class="nav-item">
                         <a href="about.html" class="nav-link active">About</a>
@@ -56,10 +50,10 @@
                 <button class="search-btn" id="searchBtn">
                     <i class="fas fa-search"></i>
                 </button>
-                <button class="cart-btn" id="cartBtn">
+                <a href="cart.html" class="cart-btn" id="cartBtn">
                     <i class="fas fa-shopping-bag"></i>
                     <span class="cart-count">0</span>
-                </button>
+                </a>
                 <button class="menu-toggle" id="menuToggle">
                     <span></span>
                     <span></span>
@@ -324,6 +318,8 @@
     </footer>
 
     <!-- Scripts -->
+    <script src="assets/js/database.js"></script>
+    <script src="assets/js/cart.js"></script>
     <script src="assets/js/main.js"></script>
 </body>
 </html>

@@ -26,171 +26,12 @@ class ShopManager {
     }
 
     loadProducts() {
-        // Mock product data - in a real app, this would come from an API
-        this.products = [
-            {
-                id: 'midnight-elegance',
-                name: 'Midnight Elegance',
-                category: 'signature',
-                price: 189.99,
-                originalPrice: 229.99,
-                image: 'https://images.unsplash.com/photo-1541643600914-78b084683601?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80',
-                description: 'A sophisticated blend of black orchid, vanilla, and sandalwood.',
-                notes: ['floral', 'oriental'],
-                gender: 'women',
-                rating: 4.8,
-                reviews: 127,
-                badge: 'bestseller',
-                featured: true
-            },
-            {
-                id: 'golden-dawn',
-                name: 'Golden Dawn',
-                category: 'limited',
-                price: 159.99,
-                image: 'https://images.unsplash.com/photo-1588405748880-12d1d2a59d32?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80',
-                description: 'Bright citrus notes meet warm amber in this uplifting fragrance.',
-                notes: ['fresh', 'woody'],
-                gender: 'unisex',
-                rating: 4.6,
-                reviews: 89,
-                badge: 'new',
-                featured: true
-            },
-            {
-                id: 'ocean-breeze',
-                name: 'Ocean Breeze',
-                category: 'classic',
-                price: 129.99,
-                image: 'https://images.unsplash.com/photo-1594736797933-d0401ba2fe65?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80',
-                description: 'Fresh marine notes combined with delicate jasmine.',
-                notes: ['fresh', 'floral'],
-                gender: 'unisex',
-                rating: 4.7,
-                reviews: 156,
-                featured: true
-            },
-            {
-                id: 'rose-noir',
-                name: 'Rose Noir',
-                category: 'signature',
-                price: 199.99,
-                image: 'https://images.unsplash.com/photo-1615634260167-c8cdede054de?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80',
-                description: 'Dark rose petals intertwined with mysterious patchouli.',
-                notes: ['floral', 'oriental'],
-                gender: 'women',
-                rating: 4.9,
-                reviews: 203,
-                featured: true
-            },
-            {
-                id: 'vanilla-dreams',
-                name: 'Vanilla Dreams',
-                category: 'classic',
-                price: 119.99,
-                image: 'https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80',
-                description: 'Sweet vanilla with hints of caramel and musk.',
-                notes: ['oriental', 'woody'],
-                gender: 'women',
-                rating: 4.5,
-                reviews: 98,
-                featured: false
-            },
-            {
-                id: 'citrus-burst',
-                name: 'Citrus Burst',
-                category: 'limited',
-                price: 139.99,
-                image: 'https://images.unsplash.com/photo-1563170351-be82bc888aa4?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80',
-                description: 'Energizing blend of lemon, lime, and grapefruit.',
-                notes: ['fresh'],
-                gender: 'unisex',
-                rating: 4.4,
-                reviews: 76,
-                badge: 'sale',
-                featured: false
-            },
-            {
-                id: 'woody-essence',
-                name: 'Woody Essence',
-                category: 'signature',
-                price: 179.99,
-                image: 'https://images.unsplash.com/photo-1571781926291-c477ebfd024b?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80',
-                description: 'Rich sandalwood and cedar with smoky undertones.',
-                notes: ['woody', 'oriental'],
-                gender: 'men',
-                rating: 4.6,
-                reviews: 134,
-                featured: false
-            },
-            {
-                id: 'floral-fantasy',
-                name: 'Floral Fantasy',
-                category: 'classic',
-                price: 149.99,
-                image: 'https://images.unsplash.com/photo-1595425970377-c9703cf48b6d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80',
-                description: 'A bouquet of jasmine, rose, and lily of the valley.',
-                notes: ['floral'],
-                gender: 'women',
-                rating: 4.3,
-                reviews: 67,
-                featured: false
-            },
-            {
-                id: 'mystic-oud',
-                name: 'Mystic Oud',
-                category: 'limited',
-                price: 249.99,
-                image: 'https://images.unsplash.com/photo-1588405748880-12d1d2a59d32?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80',
-                description: 'Exotic oud with rose and saffron accents.',
-                notes: ['oriental', 'woody'],
-                gender: 'unisex',
-                rating: 4.8,
-                reviews: 45,
-                badge: 'exclusive',
-                featured: false
-            },
-            {
-                id: 'summer-breeze',
-                name: 'Summer Breeze',
-                category: 'seasonal',
-                price: 109.99,
-                image: 'https://images.unsplash.com/photo-1594736797933-d0401ba2fe65?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80',
-                description: 'Light and airy with coconut and sea salt.',
-                notes: ['fresh'],
-                gender: 'unisex',
-                rating: 4.2,
-                reviews: 89,
-                badge: 'seasonal',
-                featured: false
-            },
-            {
-                id: 'midnight-musk',
-                name: 'Midnight Musk',
-                category: 'signature',
-                price: 169.99,
-                image: 'https://images.unsplash.com/photo-1541643600914-78b084683601?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80',
-                description: 'Deep musk with amber and black pepper.',
-                notes: ['oriental', 'woody'],
-                gender: 'men',
-                rating: 4.7,
-                reviews: 112,
-                featured: false
-            },
-            {
-                id: 'garden-party',
-                name: 'Garden Party',
-                category: 'classic',
-                price: 134.99,
-                image: 'https://images.unsplash.com/photo-1615634260167-c8cdede054de?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80',
-                description: 'Fresh garden flowers with green leaves.',
-                notes: ['floral', 'fresh'],
-                gender: 'women',
-                rating: 4.4,
-                reviews: 78,
-                featured: false
-            }
-        ];
+        // Load products from centralized database
+        this.products = window.productDB.getAllProducts().map(product => ({
+            ...product,
+            image: product.images[0],
+            notes: [...product.notes.top, ...product.notes.heart, ...product.notes.base]
+        }));
 
         this.filteredProducts = [...this.products];
     }
@@ -610,12 +451,13 @@ class ShopManager {
         const product = this.products.find(p => p.id === productId);
         if (!product) return;
 
-        // Add to cart logic (integrate with main cart system)
-        if (window.amazingAura && window.amazingAura.addToCart) {
-            window.amazingAura.addToCart(productId);
-        } else {
-            console.log('Added to cart:', product.name);
-            this.showNotification(`${product.name} added to cart!`, 'success');
+        if (window.cartSystem) {
+            const cartProduct = {
+                id: product.id,
+                name: product.name,
+                image: product.image
+            };
+            window.cartSystem.addToCart(cartProduct);
         }
     }
 
@@ -623,12 +465,18 @@ class ShopManager {
         const product = this.products.find(p => p.id === productId);
         if (!product) return;
 
-        // Toggle wishlist logic
-        if (window.amazingAura && window.amazingAura.toggleWishlist) {
-            window.amazingAura.toggleWishlist(productId);
-        } else {
-            console.log('Toggled wishlist for:', product.name);
-            this.showNotification(`${product.name} added to wishlist!`, 'success');
+        if (window.cartSystem) {
+            const wishlistProduct = {
+                id: product.id,
+                name: product.name,
+                image: product.image
+            };
+            
+            if (window.cartSystem.isInWishlist(productId)) {
+                window.cartSystem.removeFromWishlist(productId);
+            } else {
+                window.cartSystem.addToWishlist(wishlistProduct);
+            }
         }
     }
 
@@ -687,11 +535,30 @@ document.addEventListener('DOMContentLoaded', () => {
     // Apply URL filters if any
     shopManager.applyUrlFilters();
     
+    // Handle search from URL parameters
+    const urlParams = new URLSearchParams(window.location.search);
+    const searchQuery = urlParams.get('search');
+    if (searchQuery) {
+        shopManager.search(searchQuery);
+        // Update search input if it exists
+        const searchInput = document.getElementById('searchInput');
+        if (searchInput) {
+            searchInput.value = searchQuery;
+        }
+    }
+    
     // Handle search from main navigation
     const searchInput = document.getElementById('searchInput');
     if (searchInput) {
         searchInput.addEventListener('input', (e) => {
             shopManager.search(e.target.value);
+        });
+        
+        searchInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                e.preventDefault();
+                shopManager.search(e.target.value);
+            }
         });
     }
 });
