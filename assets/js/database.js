@@ -2,9 +2,19 @@
 
 class ProductDatabase {
     constructor() {
-        this.products = this.loadProducts();
         this.categories = ['signature', 'limited', 'classic', 'seasonal', 'fresh'];
+        this.designers = [
+            'Ahmed Al maghribi', 'Versace', 'Elizabeth Arden', 'Elizabeth Taylor', 'Joop',
+            'Perry Ellis', 'Bentley', 'Bvlgari', 'Franck Oliver', 'Davidoff', 'Burberry',
+            'Dolce & Gabbana', 'Salvatore Ferragamo', 'Givenchy', 'Issey miyake', 'Azzaro',
+            'Tomford', 'Giorgio Armani', 'Emporio Armani', 'Gucci', 'Amouage', 'Mancera',
+            'Lattafa', 'Calvin Klein', 'Lalique', 'Yves Saint Laurent', 'Jimmy choo', 'Hawas',
+            'AL Haramain', 'Christian Dior', "D'Hermes", 'Britney Spears', 'Armaf', 'Afnan',
+            'Mont Blanc', 'Vera wang', 'Nautical', 'Lancome', 'Escada', 'Clinique',
+            'Rue Broca', 'Rihanna', 'Giorgio', 'Kenneth Cole'
+        ];
         this.notes = ['floral', 'woody', 'fresh', 'oriental', 'citrus', 'vanilla', 'musk'];
+        this.products = this.loadProducts();
     }
 
     loadProducts() {
@@ -20,14 +30,16 @@ class ProductDatabase {
         ];
         
         const categories = ['signature', 'fresh', 'classic', 'limited', 'seasonal'];
+        const designers = this.designers;
         const intensities = ['light', 'moderate', 'strong'];
         const genders = ['unisex'];
         
         const defaultProducts = [];
         
-        for (let i = 1; i <= 38; i++) {
+        for (let i = 1; i <= perfumeNames.length; i++) {
             const name = perfumeNames[i - 1];
             const category = categories[Math.floor(Math.random() * categories.length)];
+            const designer = designers[Math.floor(Math.random() * designers.length)];
             const intensity = intensities[Math.floor(Math.random() * intensities.length)];
             const rating = (4.0 + Math.random() * 1.0).toFixed(1);
             const reviews = Math.floor(Math.random() * 200) + 50;
@@ -37,6 +49,7 @@ class ProductDatabase {
                 id: `perfume-${i}`,
                 name: name,
                 category: category,
+                designer: designer,
                 description: `Premium fragrance with unique blend of exotic notes and sophisticated appeal.`,
                 images: [`assets/images/perfume-${i.toString().padStart(2, '0')}.jpeg`],
                 notes: {
@@ -180,6 +193,10 @@ class ProductDatabase {
         return this.categories;
     }
 
+    getDesigners() {
+        return this.designers;
+    }
+
     getNotes() {
         return this.notes;
     }
@@ -199,7 +216,12 @@ class ProductDatabase {
 }
 
 // Create global instance
-window.productDB = new ProductDatabase();
+try {
+    window.productDB = new ProductDatabase();
+    console.log('ProductDB initialized successfully with', window.productDB.getAllProducts().length, 'products');
+} catch (error) {
+    console.error('Error initializing ProductDB:', error);
+}
 
 // Export for use in other modules
 if (typeof module !== 'undefined' && module.exports) {

@@ -8,9 +8,29 @@ class AdminPanel {
     }
 
     init() {
+        // Wait for database to be ready
+        if (!window.productDB) {
+            setTimeout(() => this.init(), 100);
+            return;
+        }
+        
         this.bindEvents();
+        this.populateDesignerDropdown();
         this.loadDashboard();
         this.loadProducts();
+    }
+
+    populateDesignerDropdown() {
+        const designerSelect = document.getElementById('productDesigner');
+        if (designerSelect && window.productDB) {
+            const designers = window.productDB.getDesigners();
+            designers.forEach(designer => {
+                const option = document.createElement('option');
+                option.value = designer;
+                option.textContent = designer;
+                designerSelect.appendChild(option);
+            });
+        }
     }
 
     bindEvents() {
@@ -94,6 +114,11 @@ class AdminPanel {
     }
 
     loadDashboard() {
+        if (!window.productDB) {
+            console.error('ProductDB not available');
+            return;
+        }
+        
         const stats = window.productDB.getProductStats();
         
         // Update stats
@@ -141,6 +166,11 @@ class AdminPanel {
     }
 
     loadProducts() {
+        if (!window.productDB) {
+            console.error('ProductDB not available');
+            return;
+        }
+        
         const products = window.productDB.getAllProducts();
         this.displayProducts(products);
     }
@@ -157,6 +187,7 @@ class AdminPanel {
                 <td>
                     <div class="product-name">${product.name}</div>
                 </td>
+                <td class="product-designer">${product.designer || 'Not specified'}</td>
                 <td class="product-category">${product.category}</td>
                 <td class="price-display">Contact for Price</td>
                 <td>
@@ -241,6 +272,7 @@ class AdminPanel {
         // Basic fields
         data.name = formData.get('name');
         data.category = formData.get('category');
+        data.designer = formData.get('designer');
         data.description = formData.get('description');
         data.gender = formData.get('gender') || 'unisex';
         data.intensity = formData.get('intensity') || 'moderate';
@@ -318,6 +350,15 @@ class AdminPanel {
                     </div>
                     
                     <div class="form-group">
+                        <label for="editProductDesigner">Designer *</label>
+                        <select id="editProductDesigner" name="designer" required>
+                            ${window.productDB.getDesigners().map(designer => 
+                                `<option value="${designer}" ${product.designer === designer ? 'selected' : ''}>${designer}</option>`
+                            ).join('')}
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
                         <label for="editProductDescription">Description *</label>
                         <textarea id="editProductDescription" name="description" rows="4" required>${product.description}</textarea>
                     </div>
@@ -366,6 +407,7 @@ class AdminPanel {
         const updates = {
             name: formData.get('name'),
             category: formData.get('category'),
+            designer: formData.get('designer'),
             description: formData.get('description'),
             featured: formData.has('featured'),
             inStock: formData.has('inStock')
@@ -524,6 +566,14 @@ window.closeDeleteModal = () => adminPanel.closeDeleteModal();
 // Initialize admin panel
 let adminPanel;
 document.addEventListener('DOMContentLoaded', () => {
-    adminPanel = new AdminPanel();
-    window.adminPanel = adminPanel;
+    // Ensure database is loaded first
+    const initAdmin = () => {
+        if (window.productDB) {
+            adminPanel = new AdminPanel();
+            window.adminPanel = adminPanel;
+        } else {
+            setTimeout(initAdmin, 100);
+        }
+    };
+    initAdmin();
 });
