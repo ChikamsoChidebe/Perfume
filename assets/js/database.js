@@ -213,6 +213,10 @@ class ProductDatabase {
             }))
         };
     }
+    
+    getDesigners() {
+        return ['none', 'Elena Rodriguez', 'Marcus Chen', 'Sophie Laurent'];
+    }
 }
 
 // Create global instance

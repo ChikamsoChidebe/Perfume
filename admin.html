@@ -228,6 +228,16 @@
                                     <option value="women">Women</option>
                                 </select>
                             </div>
+                            
+                            <div class="form-group">
+                                <label for="productDesigner">Designer</label>
+                                <select id="productDesigner" name="designer">
+                                    <option value="none">None</option>
+                                    <option value="elena-rodriguez">Elena Rodriguez</option>
+                                    <option value="marcus-chen">Marcus Chen</option>
+                                    <option value="sophie-laurent">Sophie Laurent</option>
+                                </select>
+                            </div>
                         </div>
                         
                         <div class="form-section">
@@ -244,11 +254,15 @@
                             <h3>Images</h3>
                             
                             <div class="form-group">
-                                <label for="productImages">Product Images (URLs)</label>
-                                <div class="image-inputs">
-                                    <input type="url" name="image1" placeholder="Main image URL">
-                                    <input type="url" name="image2" placeholder="Second image URL">
-                                    <input type="url" name="image3" placeholder="Third image URL">
+                                <label for="productImages">Product Images</label>
+                                <div class="image-upload-area" id="imageUploadArea">
+                                    <div class="upload-placeholder">
+                                        <i class="fas fa-cloud-upload-alt"></i>
+                                        <p>Drag & drop images here or click to browse</p>
+                                        <span>Supports: JPG, PNG, WEBP (Max 5MB each)</span>
+                                    </div>
+                                    <input type="file" id="imageUpload" multiple accept="image/*" style="display: none;">
+                                    <div class="uploaded-images" id="uploadedImages"></div>
                                 </div>
                             </div>
                         </div>

@@ -16,6 +16,7 @@ class AdminPanel {
         
         this.bindEvents();
         this.populateDesignerDropdown();
+        this.initImageUpload();
         this.loadDashboard();
         this.loadProducts();
     }
@@ -284,13 +285,9 @@ class AdminPanel {
 
         // No pricing - contact for price model
 
-        // Images
-        data.images = [
-            formData.get('image1'),
-            formData.get('image2'),
-            formData.get('image3')
-        ].filter(img => img && img.trim());
-
+        // Images from uploaded files
+        data.images = this.getUploadedImages();
+        
         if (data.images.length === 0) {
             data.images = ['https://images.unsplash.com/photo-1541643600914-78b084683601?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'];
         }
@@ -513,6 +510,84 @@ class AdminPanel {
             month: 'short',
             day: 'numeric'
         });
+    }
+
+    initImageUpload() {
+        const uploadArea = document.getElementById('imageUploadArea');
+        const fileInput = document.getElementById('imageUpload');
+        
+        if (!uploadArea || !fileInput) return;
+        
+        this.uploadedFiles = [];
+        
+        uploadArea.addEventListener('click', () => {
+            fileInput.click();
+        });
+        
+        uploadArea.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            uploadArea.classList.add('dragover');
+        });
+        
+        uploadArea.addEventListener('dragleave', () => {
+            uploadArea.classList.remove('dragover');
+        });
+        
+        uploadArea.addEventListener('drop', (e) => {
+            e.preventDefault();
+            uploadArea.classList.remove('dragover');
+            this.handleFiles(e.dataTransfer.files);
+        });
+        
+        fileInput.addEventListener('change', (e) => {
+            this.handleFiles(e.target.files);
+        });
+    }
+    
+    handleFiles(files) {
+        Array.from(files).forEach(file => {
+            if (file.type.startsWith('image/') && file.size <= 5 * 1024 * 1024) {
+                this.processImageFile(file);
+            }
+        });
+    }
+    
+    processImageFile(file) {
+        const reader = new FileReader();
+        reader.onload = (e) => {
+            const imageData = {
+                file: file,
+                dataUrl: e.target.result,
+                name: file.name
+            };
+            
+            this.uploadedFiles.push(imageData);
+            this.displayUploadedImages();
+        };
+        reader.readAsDataURL(file);
+    }
+    
+    displayUploadedImages() {
+        const container = document.getElementById('uploadedImages');
+        if (!container) return;
+        
+        container.innerHTML = this.uploadedFiles.map((image, index) => `
+            <div class="uploaded-image">
+                <img src="${image.dataUrl}" alt="${image.name}">
+                <button class="remove-image" onclick="adminPanel.removeUploadedImage(${index})">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+        `).join('');
+    }
+    
+    removeUploadedImage(index) {
+        this.uploadedFiles.splice(index, 1);
+        this.displayUploadedImages();
+    }
+    
+    getUploadedImages() {
+        return this.uploadedFiles.map(image => image.dataUrl);
     }
 
     showNotification(message, type = 'info') {
