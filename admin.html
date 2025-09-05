@@ -39,6 +39,10 @@
                     <i class="fas fa-box"></i>
                     <span>Products</span>
                 </button>
+                <button class="nav-btn" data-section="designers">
+                    <i class="fas fa-palette"></i>
+                    <span>Designers</span>
+                </button>
                 <button class="nav-btn" data-section="add-product">
                     <i class="fas fa-plus"></i>
                     <span>Add Product</span>
@@ -178,6 +182,32 @@
             </div>
         </section>
 
+        <!-- Designers Section -->
+        <section class="admin-section" id="designers">
+            <div class="admin-container">
+                <div class="section-header">
+                    <h1>Designers</h1>
+                    <p>Manage perfume designers</p>
+                </div>
+                
+                <div class="designers-controls">
+                    <div class="search-box">
+                        <input type="text" id="designerSearch" placeholder="Search designers...">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    
+                    <button class="btn btn-primary" onclick="adminPanel.showAddDesignerModal()">
+                        <i class="fas fa-plus"></i>
+                        <span>Add Designer</span>
+                    </button>
+                </div>
+                
+                <div class="designers-grid" id="designersGrid">
+                    <!-- Designers will be loaded here -->
+                </div>
+            </div>
+        </section>
+
         <!-- Add Product Section -->
         <section class="admin-section" id="add-product">
             <div class="admin-container">
@@ -226,16 +256,6 @@
                                     <option value="unisex">Unisex</option>
                                     <option value="men">Men</option>
                                     <option value="women">Women</option>
-                                </select>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="productDesigner">Designer</label>
-                                <select id="productDesigner" name="designer">
-                                    <option value="none">None</option>
-                                    <option value="elena-rodriguez">Elena Rodriguez</option>
-                                    <option value="marcus-chen">Marcus Chen</option>
-                                    <option value="sophie-laurent">Sophie Laurent</option>
                                 </select>
                             </div>
                         </div>
@@ -301,16 +321,6 @@
                                     </select>
                                 </div>
                                 
-                                <div class="form-group">
-                                    <label for="productLongevity">Longevity</label>
-                                    <select id="productLongevity" name="longevity">
-                                        <option value="2-4 hours">2-4 hours</option>
-                                        <option value="4-6 hours">4-6 hours</option>
-                                        <option value="6-8 hours">6-8 hours</option>
-                                        <option value="8-12 hours">8-12 hours</option>
-                                        <option value="12+ hours">12+ hours</option>
-                                    </select>
-                                </div>
                                 
                                 <div class="form-group">
                                     <label for="productSillage">Sillage</label>
@@ -371,6 +381,10 @@
                 <i class="fas fa-box"></i>
                 <span>Products</span>
             </button>
+            <button class="mobile-nav-btn" data-section="designers">
+                <i class="fas fa-palette"></i>
+                <span>Designers</span>
+            </button>
             <button class="mobile-nav-btn" data-section="add-product">
                 <i class="fas fa-plus"></i>
                 <span>Add</span>
@@ -412,6 +426,31 @@
                     <button class="btn btn-outline" onclick="closeDeleteModal()">Cancel</button>
                     <button class="btn btn-danger" id="confirmDeleteBtn">Delete Product</button>
                 </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add Designer Modal -->
+    <div class="modal" id="addDesignerModal">
+        <div class="modal-overlay"></div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Add Designer</h2>
+                <button class="modal-close" onclick="adminPanel.closeDesignerModal()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="addDesignerForm">
+                    <div class="form-group">
+                        <label for="designerName">Designer Name *</label>
+                        <input type="text" id="designerName" name="name" required>
+                    </div>
+                    <div class="modal-actions">
+                        <button type="button" class="btn btn-outline" onclick="adminPanel.closeDesignerModal()">Cancel</button>
+                        <button type="submit" class="btn btn-primary">Add Designer</button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>

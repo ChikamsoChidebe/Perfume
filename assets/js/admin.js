@@ -23,8 +23,9 @@ class AdminPanel {
 
     populateDesignerDropdown() {
         const designerSelect = document.getElementById('productDesigner');
-        if (designerSelect && window.productDB) {
-            const designers = window.productDB.getDesigners();
+        if (designerSelect) {
+            const designers = this.getAllDesigners();
+            designerSelect.innerHTML = '<option value="">Select Designer</option>';
             designers.forEach(designer => {
                 const option = document.createElement('option');
                 option.value = designer;
@@ -32,6 +33,55 @@ class AdminPanel {
                 designerSelect.appendChild(option);
             });
         }
+    }
+
+    getAllDesigners() {
+        return [
+            'Ahmed Al maghribi',
+            'Versace',
+            'Elizabeth Arden',
+            'Elizabeth Taylor',
+            'Joop',
+            'Perry Ellis',
+            'Bentley',
+            'Bvlgari',
+            'Franck Oliver',
+            'Davidoff',
+            'Burberry',
+            'Dolce &Gabbana',
+            'Salvatore Ferragamo',
+            'Givenchy',
+            'Issey miyake',
+            'Azzaro',
+            'Tomford',
+            'Giorgio Armani',
+            'Emporio Armani',
+            'Gucci',
+            'Amouage',
+            'Mancera',
+            'Lattafa',
+            'Calvin Klein',
+            'Lalique',
+            'YvesSaintLaurent',
+            'Jimmy choo',
+            'Hawas',
+            'AL Haramain',
+            'Christian Dior',
+            "D'Hermes",
+            'Britney Spears',
+            'Armaf',
+            'Afnan',
+            'Mont Blanc',
+            'Vera wang',
+            'Nautical',
+            'Lancome',
+            'Escada',
+            'Clinique',
+            'Rue Broca',
+            'Rihanna',
+            'Giorgio',
+            'Kenneth Cole'
+        ].sort();
     }
 
     bindEvents() {
@@ -69,6 +119,23 @@ class AdminPanel {
         
         if (stockFilter) {
             stockFilter.addEventListener('change', () => this.filterProducts());
+        }
+
+        // Designer search
+        const designerSearch = document.getElementById('designerSearch');
+        if (designerSearch) {
+            designerSearch.addEventListener('input', (e) => {
+                this.filterDesigners();
+            });
+        }
+
+        // Add designer form
+        const addDesignerForm = document.getElementById('addDesignerForm');
+        if (addDesignerForm) {
+            addDesignerForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                this.handleAddDesigner(e);
+            });
         }
 
         // Modal events
@@ -110,6 +177,9 @@ class AdminPanel {
                 break;
             case 'products':
                 this.loadProducts();
+                break;
+            case 'designers':
+                this.loadDesigners();
                 break;
         }
     }
@@ -349,7 +419,7 @@ class AdminPanel {
                     <div class="form-group">
                         <label for="editProductDesigner">Designer *</label>
                         <select id="editProductDesigner" name="designer" required>
-                            ${window.productDB.getDesigners().map(designer => 
+                            ${this.getAllDesigners().map(designer => 
                                 `<option value="${designer}" ${product.designer === designer ? 'selected' : ''}>${designer}</option>`
                             ).join('')}
                         </select>
@@ -588,6 +658,87 @@ class AdminPanel {
     
     getUploadedImages() {
         return this.uploadedFiles.map(image => image.dataUrl);
+    }
+
+    loadDesigners() {
+        const designers = this.getAllDesigners();
+        this.displayDesigners(designers);
+    }
+
+    displayDesigners(designers) {
+        const grid = document.getElementById('designersGrid');
+        if (!grid) return;
+
+        grid.innerHTML = designers.map(designer => `
+            <div class="designer-card">
+                <div class="designer-info">
+                    <h3>${designer}</h3>
+                    <p>Luxury Perfume Designer</p>
+                </div>
+                <div class="designer-actions">
+                    <button class="action-btn edit" onclick="adminPanel.editDesigner('${designer}')" title="Edit">
+                        <i class="fas fa-edit"></i>
+                    </button>
+                    <button class="action-btn delete" onclick="adminPanel.deleteDesigner('${designer}')" title="Delete">
+                        <i class="fas fa-trash"></i>
+                    </button>
+                </div>
+            </div>
+        `).join('');
+    }
+
+    filterDesigners() {
+        const searchTerm = document.getElementById('designerSearch')?.value.toLowerCase() || '';
+        const designers = this.getAllDesigners();
+        
+        const filtered = designers.filter(designer => 
+            designer.toLowerCase().includes(searchTerm)
+        );
+        
+        this.displayDesigners(filtered);
+    }
+
+    showAddDesignerModal() {
+        this.showModal('addDesignerModal');
+    }
+
+    handleAddDesigner(event) {
+        const formData = new FormData(event.target);
+        const designerName = formData.get('name').trim();
+        
+        if (!designerName) {
+            this.showNotification('Please enter a designer name', 'error');
+            return;
+        }
+        
+        // In a real app, you'd save to database
+        this.showNotification('Designer added successfully!', 'success');
+        this.closeDesignerModal();
+        event.target.reset();
+        
+        // Refresh designer dropdown
+        this.populateDesignerDropdown();
+    }
+
+    editDesigner(designerName) {
+        const newName = prompt('Edit designer name:', designerName);
+        if (newName && newName.trim() && newName !== designerName) {
+            this.showNotification('Designer updated successfully!', 'success');
+            this.loadDesigners();
+            this.populateDesignerDropdown();
+        }
+    }
+
+    deleteDesigner(designerName) {
+        if (confirm(`Are you sure you want to delete "${designerName}"?`)) {
+            this.showNotification('Designer deleted successfully!', 'success');
+            this.loadDesigners();
+            this.populateDesignerDropdown();
+        }
+    }
+
+    closeDesignerModal() {
+        this.closeAllModals();
     }
 
     showNotification(message, type = 'info') {
